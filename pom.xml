@@ -81,8 +81,8 @@
         <spotless.version>2.43.0</spotless.version>
         <pitest.version>1.15.8</pitest.version>
         <pmd.version>3.23.0</pmd.version>
-        <checkstyle-plugin.version>3.4.0</checkstyle-plugin.version>
-        <checkstyle.version>10.17.0</checkstyle.version>
+        <checkstyle-plugin.version>8.29</checkstyle-plugin.version>
+        <checkstyle.version>8.29</checkstyle.version>
     </properties>
 
     <scm>
