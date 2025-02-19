@@ -1,0 +1,14 @@
+
+###
+# this data is only available with data-base scheme: admin_manager_dzm_383
+
+POST http://localhost:8082/api/v1/search
+Content-Type: application/json
+
+{
+  "id" :  42,
+  "maxResultAmount": 2,
+  "portalId": 783277,
+  "searchString" : "Audi",
+  "searchOffset" : 5
+}

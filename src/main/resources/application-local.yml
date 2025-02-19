@@ -1,0 +1,9 @@
+keycloak:
+  auth-server-url: http://localhost:9089
+  realm: master
+  client-id: keycloak-client-id
+  client-secret: keycloak-client-secret
+spring:
+  mail:
+    port: 25
+    host: localhost

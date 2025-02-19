@@ -1,0 +1,522 @@
+management:
+
+  # Spring Actuator endpoints.
+  # https://docs.spring.io/spring-boot/docs/3.2.5/reference/html/actuator.html#actuator.endpoints
+  endpoints:
+    web:
+      # Exposition of additional health endpoints over HTTP
+      # https://docs.spring.io/spring-boot/docs/3.2.5/reference/html/actuator.html#actuator.endpoints.exposing
+      #
+      # The link above describes the process of enabling/disabling of endpoints
+      exposure:
+        include:
+          # The info-endpoint exposes version information and can be reached under
+          # http://<host>:<port>/actuator/info
+          # For the configuration of the info-endpoint itself, see the management.info.* settings
+          - info
+
+  info:
+    # For the reported application name in this endpoint see the
+    # geoportal.gateway.info.* settings
+    git:
+      # Include git commit in the output
+      enabled: false
+    build:
+      # Include build information (like timestamp) in the output
+      enabled: false
+    defaults:
+      enabled: false
+
+
+# Geoportal settings ###############################################################
+geoportal:
+
+  admin-manager:
+
+    # Connection to the AdminManager PostGreSQL database
+    datasource:
+      # Postgresql database host
+      # Example:
+      # host: my-pg-server.mydomain.mytld
+      host: localhost
+
+      # Postgresql database port
+      # Example:
+      # port: 5432
+      port: 5432
+
+      # Postgresql database name
+      # Example:
+      # database: pg
+      database: postgres
+
+      # Postgresql database schema name
+      # Example:
+      # schema: public
+      schema: public
+
+      # Postgresql database user name
+      username: postgres
+
+      # Postgresql database user password
+      password: password
+
+      # Postgres pool configuration
+      pool:
+        # Postgres pool max connections
+        max-size: 10
+        # Postgres pool minimum idle connections
+        min-idle: 1
+
+
+  elastic-search:
+    # Elastic Search server is reachable via the "geoserver" route of the
+    # spring cloud-gateway loadbalancer.
+    # url: lb://elastic-search
+    url: lb://elastic-search
+
+  geoserver:
+    # Geoserver is reachable via the "geoserver" route of the spring
+    # cloud-gateway loadbalancer.
+    # url: lb://geoserver
+    url: lb://geoserver
+
+    # Geoserver endpoint - requests targeting this path will be forwarded to geoserver.
+    #
+    # Geoserver needs to be configured accordingly, with "/geoserver" being the default setting of
+    # geoserver installations.
+    #
+    # endpoint: /geoserver
+    endpoint: /geoserver
+
+    # Maximum number of milliseconds to spend on parsing XML documents
+    # send to geoserver or returned from geoserver.
+    #
+    # This setting is a security measure to prevent clients from consuming too much server CPU time.
+    #
+    # max-xml-parsing-duration-ms: 400
+    max-xml-parsing-duration-ms: 400
+
+    # Ermöglicht das Ersetzen des Hostnamens für Capabilities Abfragen
+    # Example:
+    # hostname-mapping: "http://oldhost.muenchen.de:8081,https://newhost.muenchen.de;http://oldserver.org,http://newserver.de"
+    hostname-mapping: ""
+
+    # GeoServer Service Requests welche geblockt werden sollen.
+    # Unabhängig von der Sichtbarkeit des Layers welcher möglicherweise referenziert wird.
+    # Es wird nicht nach Servcce-Typ (WMS/WFS/...) unterschieden.
+    blocked-request-types: [ ]
+
+  mapfish:
+    # Mapfish print server is reachable via the "mapfish" route of the
+    # spring cloud-gateway loadbalancer.
+    # See spring.cloud.gateway.routes setting.
+    url: lb://mapfish
+
+  geonetwork:
+    # geonetwork is reachable via the "geonetwork" route of the
+    # spring cloud-gateway loadbalancer.
+    # See spring.cloud.gateway.routes setting.
+    url: lb://geonetwork
+
+  resource:
+    # Endpoint to download resources via path of the resource
+    endpoint: /resource/download
+
+    # Name of document folder (which is within unit folder)
+    documents-folder: dokumente
+
+    # Enable routing to webserver to serve files instead of serving from local filesystem
+    enable-webserver: false
+
+    # Local path to resources
+    local-path: changeMe
+
+    # Webserver path including resource endpoint of webserver i.e. http://<webserver-host>:<port><resource-endpoint>
+    # By forwarding the request to the webserver the resources endpoint path of the gateway will be excluded.
+    webserver-path: #changeMe if webserver enabled
+
+  print:
+    # Endpoint to accept print requests on
+    endpoint: /printserver
+
+  # machine-to-machine communication related settings
+  m2m:
+    # Endpoint to accept m2m requests on
+    password-endpoint: /security/basicAuth/password
+    # Url to Geoportal-EAI
+    eai-url:
+
+  style:
+    icon:
+      dir: changeMe
+      # File search pattern used to search for icons in the filesystem and to create the icon list
+      glob-pattern: '*/rasterdatenklein/__icons/**/*.{jpg,jpeg,png,svg};*/rasterdatenklein/__icons/*.{jpg,jpeg,png,svg}'
+      # Prefix for icon elements of the icon list
+      fileIdentifier: 'icon://'
+      # endpoint to get a specific icon via its path
+      endpoint: '/resource/icon'
+
+    legend:
+      dir: changeMe
+      # File search pattern used to search for legends in the filesystem and to create the legends list
+      glob-pattern: '*/rasterdatenklein/__legenden/**/*.{jpg,jpeg,png};*/rasterdatenklein/__legenden/*.{jpg,jpeg,png}'
+      # Prefix for legend elements of the legends list
+      file-identifier: 'legend://'
+      # endpoint to get a specific legend via its path
+      endpoint: '/resource/legend'
+
+  gateway:
+
+    info:
+      name: DZ Gateway
+      id: gdi-dz-gateway
+
+    api:
+      # Many endpoints of this gateway include a version path fragment. This setting
+      # allows the configuration of this value.
+      # The configured value must match the configuration of admin-manager as it is written
+      # into the generated portals.
+      # version: v1
+      version: v1
+
+    error-urls:
+      401: 'public/error/401.html'
+      403: 'public/error/403.html'
+      404: 'public/error/404.html'
+      500: 'public/error/500.html'
+
+    stage: CONFIGURATION
+
+    # The external url of the gateway. This has to be the same Url as the users use to access
+    # this service
+    # Example:
+    # externalUrl: https//dzm.de
+    externalUrl: http://localhost:${server.port}
+
+    routes:
+      # Endpoint to refresh the route configuration for the sensor layers.
+      # Called by admin-manager after a change in the sensor layer configuration.
+      refresh-endpoint: /api/${geoportal.gateway.api.version}/routes/refresh
+
+    # Maximum number of bytes to accept in the body of a request.
+    # value 0B means no limit is enforced.
+    # Syntax examples: 1MB, 200KB, 50B
+    max-request-body-size: 2MB
+
+    login:
+      logincheck-endpoint: /logincheck
+      login-success:
+        endpoint: /login/success
+        page: public/close.html
+
+      logout-redirect:
+        # The parameter name of the redirect uri changed in keycloak ~19. Formerly it was "redirect_uri", after the change it is "post_logout_redirect_uri".
+        # See the GET logout method of https://www.keycloak.org/docs-api/22.0.3/javadocs/org/keycloak/protocol/oidc/endpoints/LogoutEndpoint.html#backchannelLogout()
+        endpoint: ${geoportal.gateway.portal.endpoint}/master
+        uri-key: post_logout_redirect_uri
+        send-id-token: true
+        id-token-key: id_token_hint
+
+    style-preview:
+      # Directory where the files of the generated style-previews are located on disk
+      path: /changeMe
+
+      # Endpoint to show style previews
+      endpoint: /style-preview
+
+    portal:
+      endpoint: /portal
+      api-endpoint: /api/${geoportal.gateway.api.version}/portal
+
+    metadata:
+      detail-url: http://localhost
+      id-parameter: metadataId
+
+    product:
+      endpoint: /api/${geoportal.gateway.api.version}/products
+      image-path: image
+
+    search:
+      endpoint: /api/${geoportal.gateway.api.version}/search
+
+    sensor:
+      # Enable the sensor layer feature and expose sensor layers to clients
+      #
+      # enabled: true
+      enabled: false
+
+      # endpoint under which sensor layers will be exposed.
+      #
+      # The endpoint is relative to the root path of the application.
+      #
+      # Sensor layers will be exposed using the url schema "<endpoint>/<sensor-layer-id>"
+      # and all requests below this path will be forwarded to the sensor layer.
+      #
+      # endpoint: sensor
+      endpoint: sensor
+
+      # Rewrite URL Parameter, re-escape and convert from UTF8 escaping to ASCII.
+      # FROST server only supports ASCII characters in URL parameters.
+      reescape-url-parameter-ascii: true
+
+      # Replace the original server urls in the sensor data with the URL the data is exposed under
+      # in the gateway.
+      replace-originating-url: true
+
+    # Configuration of the Spring cloud-api loadbalancer.
+    # The loadbalancer forwards incoming requests to backend services.
+    load-balancer:
+
+      services:
+
+        elastic-search:
+          # Urls to backend elasticsearch instances
+          #
+          # Expected is a YAML list, individual URLs are supposed to
+          # contain no path.
+          #
+          # e.g. http://my-elastic-search-server.de:8020
+          urls: [ ]
+
+          # Username for elastic-search
+          username: changeMe
+
+          # Password for elastic-search
+          password: changeMe
+
+          # Name of the elasticsearch index to use for the address search
+          address-index-name: addresses
+
+        geoserver:
+          # Urls to backend geoserver instances
+          #
+          # Expected is a YAML list, individual URLs are supposed to
+          # contain no path.
+          urls: [ ]
+
+        geonetwork:
+          # Urls to backend geonetwork instances
+          #
+          # Expected is a YAML list, individual URLs are supposed to
+          # contain no path.
+          urls: [ ]
+
+        mapfish:
+          # Mapfish proxying is sticky, which means that users will always be
+          # forwarded to the same instance as long as their session lasts.
+          # This is crucial for the document retrieval of submitted print request.
+          # sticky: true
+          sticky: true
+
+          # Urls to backend mapfish instances
+          #
+          # Expected is a YAML list, individual URLs are supposed to
+          # contain no path.
+          urls: [ ]
+
+
+# Server settings ################################################################
+#
+server:
+  # Server port for the gateway to listen on
+  # port: 8082
+  port: 8082
+
+  reactive:
+    session:
+      # Session timeout. If a duration suffix is not specified,
+      # seconds will be used.
+      # timeout: 30m
+      timeout: 30m
+
+  compression:
+    # enables/disabled HTTP transport compression
+    # enabled: true
+    enabled: true
+
+# logging settings ###############################################################
+#
+logging:
+  # log levels for individual loggers
+  level:
+    root: WARN
+
+    reactor: INFO
+    javax.activation: INFO
+    org.springframework: INFO
+    org.hibernate: INFO
+    io.netty: INFO
+    io.lettuce: INFO
+    io.r2dbc: INFO
+    reactor.netty: INFO
+    sun.net: INFO
+    de.swm.lhm.geoportal.gateway: DEBUG
+
+    # Logger for the WFS-T logging. Log messages are emitted on INFO level, so this needs to be set
+    # to at least that level to enable this logging feature
+    wfstJsonLogger: INFO
+
+
+  pattern:
+    console: "%black(%date{ISO8601}) %highlight(%-5level) [%blue(%-20thread)] %yellow(%logger,%line): %message%n%throwable"
+    file: "%date{ISO8601} %-5level [%thread] %logger,%line: %message%n%throwable"
+
+  file:
+    format-name: log
+    name: ${logging.dir.name}/${geoportal.gateway.info.id}.${logging.file.format-name}
+
+  # logging directory settings
+  dir:
+    # Path of the directory the logs are written to.
+    # Used as placeholder in the individual log-file settings
+    name: logs
+
+  # WFS-T logging
+  wfs-transaction:
+
+    # Maximum file size in MB before a logfile get rotated and a new one is created.
+    max-file-size: 50MB
+
+    # Max history days. Maximum number of daily logfiles to keep
+    max-history-days: 7
+
+    # Location of the log file
+    # The logfile itself will be written in jsonlines format and is machine-readable with
+    # many opensource libraries like pandas, ...
+    name: ${logging.dir.name}/wfs-transaction.log
+
+  # General configuration for the logback logging library
+  logback:
+    rollingpolicy:
+      # File name pattern for the generated logilfes
+      file-name-pattern: ${logging.dir.name}/${geoportal.gateway.info.id}-%d{yyyy-MM-dd}.%i.${logging.file.format-name}
+
+
+
+# Settings for Spring-builtin functionalities #######################################################
+spring:
+
+  main:
+    web-application-type: reactive
+
+  profiles:
+    # Default profile is prod, e.g. if there is an application-prod.properties or
+    # application-prod.yml file present within the classpath, it will overwrite configs within application.properties/yml
+    active: prod
+    group:
+       local:
+         - no-security
+       prod:
+       test:
+
+  # Liquibase database schema migrations are not used by this project, so these are disabled.
+  liquibase:
+    enabled: false
+
+  codec:
+    # Limit on the number of bytes that can be buffered whenever the input stream
+    # needs to be aggregated. This applies only to the auto-configured WebFlux
+    # server and WebClient instances. By default this is not set, in which case
+    # individual codec defaults apply. Most codecs are limited to 256K by default.
+    #
+    # https://stackoverflow.com/questions/59735951/databufferlimitexception-exceeded-limit-on-max-bytes-to-buffer-webflux-error
+    max-in-memory-size: 10MB
+
+  cloud:
+
+    gateway:
+      httpclient:
+        pool:
+          # Time in millis (or a parsable value like 30s) after which the channel
+          # will be closed. If NULL, there is no max idle time.
+          max-idle-time: 30s
+
+      # Spring cloud-gateway routing
+      # https://cloud.spring.io/spring-cloud-gateway/reference/html/#configuration
+      #
+      # Geoserver routing more complex and is done in java code. See
+      # GeoServiceRouteConfig class.
+      routes:
+        # route which is being routed to the geonetwork server
+        - id: geonetwork
+          uri: ${geoportal.geonetwork.url}
+          predicates:
+            - Path=/geonetwork/srv/api/records/**,/geonetwork/srv/*/csw
+
+
+  # Spring security configuration
+  #
+  # https://docs.spring.io/spring-security/reference/index.html
+  security:
+
+    # Spring OAuth2 configuration.
+    #
+    # https://docs.spring.io/spring-security/reference/servlet/oauth2/index.html
+    #
+    # Please prefer the simplified version of these settings in the keycloak.* section of this
+    # configuration file.
+    oauth2:
+      realm-uri: ${keycloak.auth-server-url}/realms/${keycloak.realm}
+      openid-connect-uri: ${spring.security.oauth2.realm-uri}/protocol/openid-connect
+      client:
+
+        provider:
+          keycloak:
+            issuer-uri: ${spring.security.oauth2.realm-uri}
+            token-uri: ${spring.security.oauth2.openid-connect-uri}/token
+            user-info-uri: ${spring.security.oauth2.openid-connect-uri}/userinfo
+            # only issuer-uri, token-uri and user-info-uri is really needed, other configuration properties
+            # are only added for the sake of completeness
+            authorization-uri: ${spring.security.oauth2.openid-connect-uri}/auth
+            jwk-set-uri: ${spring.security.oauth2.openid-connect-uri}/certs
+            user-name-attribute: preferred_username
+            logout-uri: ${spring.security.oauth2.openid-connect-uri}/logout
+
+
+        registration:
+          keycloak:
+            client-id: ${keycloak.client-id}
+            client-secret: ${keycloak.client-secret}
+            # only client-id and client-secret are really needed, other configuration properties
+            # are only added for the sake of completeness
+            clientName: Keycloak
+            authorization-grant-type: authorization_code
+            redirectUri: '{baseUrl}/login/oauth2/code/{registrationId}'
+            scope:
+              - openid
+              - profile
+              - email
+
+      resourceserver:
+        jwt:
+          issuer-uri: ${spring.security.oauth2.realm-uri}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

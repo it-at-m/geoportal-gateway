@@ -1,0 +1,304 @@
+# Simplified keycloak configuration ############################################################
+#
+# This section is used to parametrize the settings of the
+# spring.security.oauth2 section
+keycloak:
+
+  # KeyCloak server URL
+  # Beispiel:
+  # auth-server-url: http://<keycloak-host>:<keycloak-port>
+  auth-server-url: http://svlhmgdii03.muenchen.swm.de:8090/auth
+
+  # Name des zu verwendenden Keycloak-Realms. Diese Einstellung kann aus Keycloak ausgelesen werden. Beispiel:
+  # realm: public
+  realm: public
+
+  # Client ID des anzusprechenden Keycloak-Clients. Beispiel:
+  # je nach Stage der Middleware ist hier der im Keycloak hinterlegte Client zur Stage einzutragen
+  # client-id=geoPortal-K
+  client-id: geoPortal-K
+
+  # Das Secret des anzusprechenden Keycloak Clients. Das Secret kann aus Keycloak ausgelesen werden
+  # client-secret=<client secret>
+  client-secret: ChangeMe
+
+
+# Springdoc API documentation generation ##########################################
+#
+# The full documentation is available under https://springdoc.org/#getting-started
+springdoc:
+  api-docs:
+    # In order to disable the springdoc-openapi endpoint
+    # (/v3/api-docs by default) set enabled to false.
+    # enabled: false
+    enabled: true
+
+
+# Geoportal settings ###############################################################
+#
+geoportal:
+
+  admin-manager:
+
+    # Connection to the AdminManager PostGreSQL database
+    datasource:
+      # Postgresql database host
+      # Example:
+      # host: my-pg-server.mydomain.mytld
+      host: localhost
+
+      # Postgresql database port
+      # Example:
+      # port: 5432
+      port: 5433
+
+      # Postgresql database name
+      # Example:
+      # database: pg
+      database: admin_manager
+
+      # Postgresql database schema name
+      # Example:
+      # schema: public
+      schema: admin_manager_4
+
+      # Postgresql database user name
+      username: admin_manager
+
+      # Postgresql database user password
+      password: ChangeMe
+
+
+  geoserver:
+
+    # Ermöglicht das Ersetzen des Hostnamens für Capabilities Abfragen
+    # Example:
+    # hostname-mapping: http://oldhost.muenchen.de:8081,https://newhost.muenchen.de;http://oldserver.org,http://newserver.de
+    hostname-mapping: http://svlhmgdici01.muenchen.swm.de:8081,http://svlhmgdici01mapped.muenchen.swm.de:8081;http://svlhmgdici02.muenchen.swm.de:8081,http://svlhmgdici02mapped.muenchen.swm.de:8081
+
+    # GeoServer Service Requests welche geblockt werden sollen.
+    # Unabhängig von der Sichtbarkeit des Layers welcher möglicherweise referenziert wird.
+    # Es wird nicht nach Service-Typ (WMS/WFS/...) unterschieden.
+    blocked-request-types:
+      - GetStyles
+      - GetGMLObject
+      - GetPropertyValue
+      - GetFeatureWithLock
+      - CreateStoredQuery
+      - DropStoredQuery
+      - ListStoredQueries
+      - DescribeStoredQueries
+      - DescribeCoverage
+      - PostEncoding
+
+
+  # Settings for the contact form
+  contactform:
+    # Sender email address to use for the mails send from the contact form.
+    sender: geoportal@swm.de
+
+    # Recipient email address to send the contact emails to.
+    recipient: Change.Me@swm.de
+
+
+  style:
+    icon:
+      # Directory from where the icons are searched for and accessed
+      dir: ChangeMe
+
+    legend:
+      # Directory from where the legends are searched for and accessed
+      dir: ChangeMe
+
+  m2m:
+    # Geoprtal-EAI server URL
+    # https://ext-github.swm.de/LHM/gdi-geoportal-eai
+    # Beispiel:
+    # eai-url: http://<eai-host>:<eai-port>
+    eai-url: http://svlhmgdii03.muenchen.swm.de:8093
+
+
+  gateway:
+
+    # The stage this instance serves portal for.
+    # Possible values are: CONFIGURATION, QS, PROD
+    # stage: CONFIGURATION
+    stage: CONFIGURATION
+
+    # The external url of the gateway. This has to be the same Url as the users use to access
+    # this service
+    # Example:
+    # externalUrl: https//dzm.de
+    externalUrl: http://localhost:${server.port}
+
+    portal:
+      # Directory where the files of the generated portals are located on disk
+      # path: /some/directory/changeme
+      path: ChangeMe
+
+    sensor:
+      # Enable the sensor layer feature and expose sensor layers to clients
+      #
+      # enabled: true
+      enabled: true
+
+    # Configuration of the Spring cloud-api loadbalancer.
+    # The loadbalancer forwards incoming requests to backend services.
+    load-balancer:
+      services:
+
+        elastic-search:
+          # Urls to backend elasticsearch instances
+          #
+          # Expected is a YAML list, individual URLs are supposed to
+          # contain no path.
+          #
+          # e.g. http://my-elastic-search-server.de:8020
+          urls:
+            - http://svlhmgdii01.muenchen.swm.de:8083
+            - http://svlhmgdii02.muenchen.swm.de:8083
+            - http://svlhmgdii03.muenchen.swm.de:8083
+
+          # Username for elastic-search
+          username: elastic
+
+          # Password for elastic-search
+          password: ChangeMe
+
+        geoserver:
+          # Urls to backend geoserver instances
+          #
+          # Expected is a YAML list, individual URLs are supposed to
+          # contain no path.
+          urls:
+            - http://svlhmgdici01.muenchen.swm.de:8081
+            - http://svlhmgdici02.muenchen.swm.de:8081
+
+        geonetwork:
+          # Urls to backend geonetwork instances
+          #
+          # Expected is a YAML list, individual URLs are supposed to
+          # contain no path.
+          urls:
+            - http://svlhmgdici01.muenchen.swm.de:8082
+
+        mapfish:
+          # Urls to backend mapfish instances
+          #
+          # Expected is a YAML list, individual URLs are supposed to
+          # contain no path.
+          urls:
+            - http://svlhmgdici01.muenchen.swm.de:8089
+            - http://svlhmgdici02.muenchen.swm.de:8089
+
+
+
+  resource:
+    # Enable routing to webserver to serve files instead of serving from local filesystem
+    enable-webserver: false
+
+    # Local path to resources
+    local-path: changeMe
+
+    # Webserver path including resource endpoint of webserver i.e. http://<webserver-host>:<port><resource-endpoint>
+    # By forwarding the request to the webserver the resources endpoint path of the gateway will be excluded.
+    webserver-path: #changeMe if webserver enabled
+
+
+# Server settings ################################################################
+server:
+  # Server port for the gateway to listen on
+  # port: 8082
+  port: 8082
+
+
+logging:
+  # log levels for individual loggers
+  level:
+    root: WARN
+    de.swm.lhm.geoportal.gateway: DEBUG
+    io.r2dbc.postgresql.QUERY: DEBUG # for queries
+    io.r2dbc.postgresql.PARAM: DEBUG # for parameters
+
+    # For debugging of databuffer releasing:
+    #org.springframework.core.io.buffer: DEBUG
+    #de.swm.lhm.geoportal.gateway.geoservice.filter.response: TRACE
+
+
+  # logging directory settings
+  dir:
+    # Path of the directory the logs are written to.
+    # Used as placeholder in the individual log-file settings
+    name: logs
+
+  # WFS-T logging
+  wfs-transaction:
+
+    # Maximum file size in MB before a logfile get rotated and a new one is created.
+    max-file-size: 50MB
+
+    # Max history days. Maximum number of daily logfiles to keep
+    max-history-days: 7
+
+    # Location of the log file
+    # The logfile itself will be written in jsonlines format and is machine-readable with
+    # many opensource libraries like pandas, ...
+    name: ${logging.dir.name}/wfs-transaction.log
+
+  # General configuration for the logback logging library
+  logback:
+    rollingpolicy:
+      # Maximum file size in MB before a logfile get rotated and a new one is created.
+      max-file-size: 20MB
+
+      # max history days. Maximum number of daily logfiles to keep
+      max-history: 7
+
+
+# Settings for Spring-builtin functionalities #######################################################
+spring:
+
+  # The full documentation is available under
+  # https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#appendix.application-properties.mail
+  mail:
+    # Protocol used by the SMTP server.
+    # protocol: smtp
+    protocol: smtp
+
+    # SMTP server host. For instance, 'smtp.example.com'.
+    # host: localhost
+    host: localhost
+
+    # SMTP server port.
+    # port: 25
+    port: 25
+
+    # Login user of the SMTP server.
+    # username:
+    username:
+
+    # Login password of the SMTP server.
+    # password:
+    password:
+
+  data:
+    # Redis database to store session information in.
+    redis:
+      # hostname of the redis database server
+      # host: localhost
+      host: localhost
+
+      # port redis is listening on
+      # port: 6379
+      port: 6379
+
+io:
+  netty:
+    leakDetection:
+      # Enable leak detection for netty for all requests - not just on a random sample
+      # of 1% of the requests.
+      #
+      # This should be on PARANOID when developing so eventual leaks surface early.
+      #
+      # https://netty.io/wiki/reference-counted-objects.html
+      level: PARANOID

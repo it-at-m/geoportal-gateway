@@ -1,0 +1,187 @@
+# Simplified keycloak configuration ############################################################
+#
+# This section is used to parametrize the settings of the
+# spring.security.oauth2 section
+
+# KeyCloak server URL
+# Beispiel:
+# keycloak.auth-server-url: http://<keycloak-host>:<keycloak-port>
+keycloak.auth-server-url=http://localhost
+# Name des zu verwendenden Keycloak-Realms. Diese Einstellung kann aus Keycloak ausgelesen werden. Beispiel: keycloak.realm: public
+keycloak.realm=public
+# Client ID des anzusprechenden Keycloak-Clients. Beispiel:
+# je nach Stage der Middleware ist hier der im Keycloak hinterlegte Client zur Stage einzutragen
+# keycloak.client-id=geoPortal-K
+keycloak.client-id=keycloak-client-id
+# Das Secret des anzusprechenden Keycloak Clients. Das Secret kann aus Keycloak ausgelesen werden
+# keycloak.client-secret=<client secret>
+keycloak.client-secret=keycloak-client-secret
+
+
+# Springdoc API documentation generation ##########################################
+#
+# The full documentation is available under https://springdoc.org/#getting-started
+# In order to disable the springdoc-openapi endpoint
+# (/v3/api-docs by default) set enabled to false.
+# springdoc.api-docs.enabled: false
+springdoc.api-docs.enabled=false
+
+
+# Geoportal settings ###############################################################
+#
+# Connection to the AdminManager PostGreSQL database
+# Postgresql database host
+# Example:
+# geoportal.admin-manager.datasource.host: my-pg-server.mydomain.mytld
+geoportal.admin-manager.datasource.host=localhost
+# Postgresql database port
+# Example:
+# geoportal.admin-manager.datasource.port: 5432
+geoportal.admin-manager.datasource.port=5432
+# Postgresql database name
+# Example:
+# geoportal.admin-manager.datasource.database: pg
+geoportal.admin-manager.datasource.database=pg
+# Postgresql database schema name
+# Example:
+# geoportal.admin-manager.datasource.schema: public
+geoportal.admin-manager.datasource.schema=public
+# Postgresql database user name
+geoportal.admin-manager.datasource.username=postgres
+# Postgresql database user password
+geoportal.admin-manager.datasource.password=postgres
+# Postgres Connection Pool Einstellungen
+# Maximale Anzahl an Verbindungen zur Postgres Datenbank
+geoportal.admin-manager.datasource.pool.max-size=10
+# Minimale Anzahl an Verbindungen zur Postgres Datenbank
+geoportal.admin-manager.datasource.pool.min-idle=1
+# Ermöglicht das Ersetzen des Hostnamens für Capabilities Abfragen
+# Example:
+# geoportal.geoserver.hostname-mapping: "http://oldhost.muenchen.de:8081,https://newhost.muenchen.de;http://oldserver.org,http://newserver.de"
+geoportal.geoserver.hostname-mapping=
+# GeoServer Service Requests welche geblockt werden sollen.
+# Unabhängig von der Sichtbarkeit des Layers welcher möglicherweise referenziert wird.
+# Es wird nicht nach Service-Typ (WMS/WFS/...) unterschieden.
+geoportal.geoserver.blocked-request-types=GetStyles, GetGMLObject, GetPropertyValue, GetFeatureWithLock, CreateStoredQuery, DropStoredQuery, ListStoredQueries, DescribeStoredQueries, DescribeCoverage, PostEncoding
+
+# Settings for the contact form
+# Sender email address to use for the mails send from the contact form.
+geoportal.contactform.sender=noreply@test.de
+# Recipient email address to send the contact emails to.
+geoportal.contactform.recipient=noreply@test.de
+
+# Directory from where the icons are searched for and accessed
+geoportal.style.icon.dir=changeMe
+# Directory from where the legends are searched for and accessed
+geoportal.style.legend.dir=changeMe
+
+
+# The stage this instance serves portal for.
+# Possible values are: CONFIGURATION, QS, PROD
+# Example: geoportal.gateway.stage: CONFIGURATION
+geoportal.gateway.stage=CONFIGURATION
+# The external url of the gateway. This has to be the same Url as the users use to access
+# this service
+# Example: geoportal.gateway.externalUrl: https//dzm.de
+geoportal.gateway.externalUrl=http://localhost:${server.port}
+# Directory where the files of the generated style-previews are located on disk
+geoportal.gateway.style-preview.path=/changeMe
+# Directory where the files of the generated portals are located on disk
+# Example: geoportal.gateway.portal.path: /some/directory/changeme
+geoportal.gateway.portal.path=ChangeMe
+# Enable the sensor layer feature and expose sensor layers to clients
+# Example: geoportal.gateway.sensor.enabled: true
+geoportal.gateway.sensor.enabled=true
+# Endpoint to refresh the route configuration for the sensor layers.
+# Called by admin-manager after a change in the sensor layer configuration.
+geoportal.gateway.routes.refresh-endpoint: /api/v1/routes/refresh
+# Configuration of the Spring cloud-api loadbalancer.
+# The loadbalancer forwards incoming requests to backend services.
+# Urls to backend elasticsearch instances
+# Expected is a list, indexing starts at 0, individual URLs are supposed to contain no path.
+# e.g. http://my-elastic-search-server.de:8020
+geoportal.gateway.load-balancer.services.elastic-search.urls[0]=http://a.example.com
+geoportal.gateway.load-balancer.services.elastic-search.urls[1]=http://b.example.com
+# Username for elastic-search
+geoportal.gateway.load-balancer.services.elastic-search.username=changeMe
+# Password for elastic-search
+geoportal.gateway.load-balancer.services.elastic-search.password=ChangeMe
+# Name of the elasticsearch index to use for the address search
+geoportal.gateway.load-balancer.services.elastic-search.address-index-name=addresses
+# Urls to backend geoserver instances
+#
+# Expected is a list, indexing starts at 0, individual URLs are supposed to contain no path.
+geoportal.gateway.load-balancer.services.geoserver.urls[0]=http://a.example.com
+geoportal.gateway.load-balancer.services.geoserver.urls[1]=http://b.example.com
+# Urls to backend geonetwork instances
+# Expected is a list, indexing starts at 0, individual URLs are supposed to contain no path.
+geoportal.gateway.load-balancer.services.geonetwork.urls[0]=http://a.example.com
+geoportal.gateway.load-balancer.services.geonetwork.urls[1]=http://b.example.com
+# Urls to backend mapfish instances
+# Expected is a list, indexing starts at 0, individual URLs are supposed to contain no path.
+geoportal.gateway.load-balancer.services.mapfish.urls[0]=http://a.example.com
+geoportal.gateway.load-balancer.services.mapfish.urls[1]=http://b.example.com
+#
+# Url to geoportal eai instance
+geoportal.m2m.eai-url=https://some-server.internal:8080
+#
+# Endpoint (without host/port, just the uri path) to redirect to after logout
+geoportal.gateway.login.logout-redirect.endpoint=${geoportal.gateway.portal.endpoint}/master
+# Enable routing to webserver to serve files instead of serving from local filesystem
+geoportal.resource.enable-webserver=false
+# Local path to resources
+geoportal.resource.local-path=changeMe
+# Webserver path including resource endpoint of webserver i.e. http://<webserver-host>:<port><resource-endpoint>
+# By forwarding the request to the webserver the resources endpoint of the gateway will be excluded.
+# i.e. http://<gateway-host>/<gateway-resource-endpoint>/<resource-file-path> will be forwarded to <webserver-path>/<resource-file-path>
+geoportal.resource.webserver-path=null
+
+
+# Server settings ################################################################
+# Server port for the gateway to listen on
+# port: 8082
+server.port=8082
+
+# log levels for individual loggers
+logging.level.root=WARN
+logging.level.de.swm.lhm.geoportal.gateway=INFO
+# logging directory settings
+# Path of the directory the logs are written to.
+# Used as placeholder in the individual log-file settings
+logging.dir.name=logs
+# WFS-T logging
+# Maximum file size in MB before a logfile get rotated and a new one is created.
+logging.wfs-transaction.max-file-size=50MB
+# Max history days. Maximum number of daily logfiles to keep
+logging.wfs-transaction.max-history-days=7
+# Location of the log file
+# The logfile itself will be written in jsonlines format and is machine-readable with
+# many opensource libraries like pandas, ...
+logging.wfs-transaction.name=${logging.dir.name}/wfs-transaction.log
+# General configuration for the logback logging library
+# Maximum file size in MB before a logfile get rotated and a new one is created.
+logging.logback.rollingpolicy.max-file-size=20MB
+# max history days. Maximum number of daily logfiles to keep
+logging.logback.rollingpolicy.max-history=7
+
+
+# Settings for Spring-builtin functionalities #######################################################
+# The full documentation is available under
+# https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#appendix.application-properties.mail
+# Protocol used by the SMTP server.
+# protocol: smtp
+spring.mail.protocol=smtp
+# SMTP server host. For instance, 'smtp.example.com'.
+# host: localhost
+spring.mail.host=ChangeMe
+# SMTP server port.
+# port: 25
+spring.mail.port=25
+# Login user of the SMTP server.
+spring.mail.username=null
+# Login password of the SMTP server.
+spring.mail.password=null
+# hostname of the redis database server
+spring.data.redis.host=ChangeMe
+# port redis is listening on
+spring.data.redis.port=6379

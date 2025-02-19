@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+    <!-- load default spring configuration -->
+    <include resource="org/springframework/boot/logging/logback/base.xml" />
+
+    <springProperty scope="context" name="wfstLogFile" source="logging.wfs-transaction.name"
+                    defaultValue="logs/wfs-transaction.log"/>
+    <springProperty scope="context" name="wfstLogFileMaxHistory" source="logging.wfs-transaction.max-history-days"
+                    defaultValue="7"/>
+    <springProperty scope="context" name="wfstLogFileSize" source="logging.wfs-transaction.max-file-size"
+                    defaultValue="50MB"/>
+
+    <appender name="wfstJson" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${wfstLogFile}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${wfstLogFile}-%d{yyyy-MM-dd}.%i</fileNamePattern>
+            <maxHistory>${wfstLogFileMaxHistory}</maxHistory>
+            <maxFileSize>${wfstLogFileSize}</maxFileSize>
+        </rollingPolicy>
+
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <fieldNames>
+                <timestamp>timeStamp</timestamp>
+                <message>message</message>
+            </fieldNames>
+        </encoder>
+    </appender>
+
+    <logger name="wfstJsonLogger" level="INFO">
+        <appender-ref ref="wfstJson" />
+    </logger>
+</configuration>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified"
+            targetNamespace="http://aberdoch.de/brand">
+    <xsd:import namespace="mywsgound"
+                schemaLocation="http://svlhmgdici02mapped.muenchen.swm.de:8081/geoserver/wfs?request=DescribeFeatureType&amp;version=1.1.0&amp;service=WFS&amp;typeName=myws%3Apubliclayer%2Cmyws%3Arestrictedlayer"/>
+    <xsd:import namespace="http://aberdoch.de/brand"
+                schemaLocation="http://svlhmgdici02mapped.muenchen.swm.de:8081/geoserver/wfs?request=DescribeFeatureType&amp;version=1.1.0&amp;service=WFS&amp;typeName=brand%3Ab1_flaeche_a%2Cbrand%3Ab1_flaeche_brand%2Cbrand%3Ab7%2Cbrand%3Akvr_wahllokale%2Cbrand%3Apointsymboltest%2Cbrand%3Araw_gewerbestandorte%2Cbrand%3Awfst"/>
+    <xsd:import namespace="plan.geoportal.muenchen.swm.de"
+                schemaLocation="http://svlhmgdici02mapped.muenchen.swm.de:8081/geoserver/wfs?request=DescribeFeatureType&amp;version=1.1.0&amp;service=WFS&amp;typeName=plan%3Aawm_container_ms%2Cplan%3Ab1_flaeche%2Cplan%3Ab3_punkt%2Cplan%3Ab4_line%2Cplan%3Ab5%2Cplan%3Ab7%2Cplan%3Ab_to_delete%2Cplan%3Abaug_umgriff_veredelt%2Cplan%3Abild_einbinden_test%2Cplan%3Abild_einbinden_test_umbenannt%2Cplan%3Afehler_ms1%2Cplan%3Afehler_ms2%2Cplan%3Ams_test_1%2Cplan%3Anaturdenkmaeler_stadtrecht%2Cplan%3Aosm_admin%2Cplan%3Aosm_interchange%2Cplan%3Aschutz_unb_baumsch_poly_gk4%2Cplan%3Aschutz_unb_lb_poly%2Cplan%3Aschutz_unb_lb_poly_gk4%2Cplan%3Aschutz_unb_naturdenkmaeler_gk4%2Cplan%3Atest%2Cplan%3Aunb_lb_poly%2Cplan%3Avagrund_baug_umgriff_join%2Cplan%3Aviertel_viertel"/>
+</xsd:schema>

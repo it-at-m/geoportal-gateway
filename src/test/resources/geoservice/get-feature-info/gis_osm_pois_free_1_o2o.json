@@ -1,0 +1,32 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "gis_osm_pois_free_1_o2o.77462",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          690319.5,
+          5335033.8
+        ]
+      },
+      "geometry_name": "shape",
+      "properties": {
+        "osm_id": "4873640911",
+        "code": 2593,
+        "fclass": "vending_any",
+        "name": null
+      }
+    }
+  ],
+  "totalFeatures": "unknown",
+  "numberReturned": 1,
+  "timeStamp": "2024-04-26T10:30:21.369Z",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:EPSG::25832"
+    }
+  }
+}

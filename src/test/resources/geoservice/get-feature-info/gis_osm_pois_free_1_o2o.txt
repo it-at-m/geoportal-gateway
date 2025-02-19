@@ -1,0 +1,8 @@
+Results for FeatureType 'playgound:gis_osm_pois_free_1_o2o':
+--------------------------------------------
+osm_id = 4873640911
+code = 2593
+fclass = vending_any
+name = null
+shape = [GEOMETRY (Point) with 1 points]
+--------------------------------------------

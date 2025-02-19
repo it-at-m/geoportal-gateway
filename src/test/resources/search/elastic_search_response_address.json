@@ -1,0 +1,52 @@
+{
+  "took": 16,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 105,
+    "max_score": 246.01952,
+    "hits": [
+      {
+        "_index": "addresses",
+        "_type": "address",
+        "_id": "fdc53678-0cef-4349-a662-a1d49dd49ee2",
+        "_score": 246.01952,
+        "_source": {
+          "id": "fdc53678-0cef-4349-a662-a1d49dd49ee2",
+          "objectId": 75915,
+          "streetName": "Klenzestraße",
+          "houseNumber": "59",
+          "streetNameComplete": "Klenzestraße 59",
+          "zipCode": "80469",
+          "city": "München",
+          "topValue": 5333874.0,
+          "rightValue": 691413.0,
+          "srs": null
+        }
+      },
+      {
+        "_index": "addresses",
+        "_type": "address",
+        "_id": "c8ae7438-0f58-4298-a662-6d30bdf92eb4",
+        "_score": 246.01952,
+        "_source": {
+          "id": "c8ae7438-0f58-4298-a662-6d30bdf92eb4",
+          "objectId": 79245,
+          "streetName": "Klenzestraße",
+          "houseNumber": "73",
+          "streetNameComplete": "Klenzestraße 73",
+          "zipCode": "80469",
+          "city": "München",
+          "topValue": 5333734.0,
+          "rightValue": 691268.0,
+          "srs": null
+        }
+      }
+    ]
+  }
+}

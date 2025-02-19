@@ -1,0 +1,54 @@
+version: '3.1'
+
+services:
+  postgres:
+    networks:
+      - geoframe
+    image: postgres:latest
+    container_name: PostgresThemManager
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - ./postgres/pgdata:/var/lib/postgresql/data
+      - ./postgres/sql:/docker-entrypoint-initdb.d
+
+  redis:
+    container_name: redis
+    image: redis:7.2
+    restart: always
+    ports:
+      - "6379:6379"
+
+  redis-commander:
+    image: ghcr.io/joeferner/redis-commander:latest
+    restart: always
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+      - PORT=6380
+    ports:
+      - "6380:6380"
+    depends_on:
+      - redis
+
+  keycloak:
+    networks:
+      - geoframe
+    image: "quay.io/keycloak/keycloak:latest"
+    container_name: AwesomeKeycloak
+    ports:
+      - "9089:8080"
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+    command: start-dev
+
+networks:
+  geoframe:
+    driver: bridge
+
+
+
+

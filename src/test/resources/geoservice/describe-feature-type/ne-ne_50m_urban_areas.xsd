@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ne="http://www.geosolutionsgroup.com/ne" xmlns:wfs="http://www.opengis.net/wfs/2.0" elementFormDefault="qualified" targetNamespace="http://www.geosolutionsgroup.com/ne">
+  <xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://maps6.geosolutionsgroup.com/geoserver/schemas/gml/3.2.1/gml.xsd"/>
+  <xsd:complexType name="ne_50m_urban_areasType">
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractFeatureType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="the_geom" nillable="true" type="gml:MultiSurfacePropertyType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="scalerank" nillable="true" type="xsd:long"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="featurecla" nillable="true" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="area_sqkm" nillable="true" type="xsd:double"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="min_zoom" nillable="true" type="xsd:double"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ne_50m_urban_areas" substitutionGroup="gml:AbstractFeature" type="ne:ne_50m_urban_areasType"/>
+</xsd:schema>

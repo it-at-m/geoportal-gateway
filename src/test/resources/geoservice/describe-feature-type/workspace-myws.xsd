@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" xmlns:myws="mywsgound"
+            elementFormDefault="qualified" targetNamespace="mywsgound">
+    <xsd:import namespace="http://www.opengis.net/gml"
+                schemaLocation="http://svlhmgdici01.muenchen.swm.de:8081/geoserver/schemas/gml/3.1.1/base/gml.xsd"/>
+    <xsd:complexType name="publiclayerType">
+        <xsd:complexContent>
+            <xsd:extension base="gml:AbstractFeatureType">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="osm_id" nillable="true" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="code" nillable="true" type="xsd:decimal"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="fclass" nillable="true" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="shape" nillable="true" type="gml:PointPropertyType"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="publiclayer" substitutionGroup="gml:_Feature"
+                 type="myws:publiclayerType"/>
+    <xsd:complexType name="restrictedlayerType">
+        <xsd:complexContent>
+            <xsd:extension base="gml:AbstractFeatureType">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="places__id" nillable="true" type="xsd:int"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="places__title" nillable="true" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="places__city" nillable="true" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="places__street" nillable="true" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="places__streetnumber" nillable="true"
+                                 type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="places__location__lat" nillable="true"
+                                 type="xsd:double"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="places__location__lng" nillable="true"
+                                 type="xsd:double"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="places__media__listpictureurl" nillable="true"
+                                 type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="places__urlinportal" nillable="true"
+                                 type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="places__ratingaverage" nillable="true"
+                                 type="xsd:double"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="shape" nillable="true" type="gml:PointPropertyType"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="restrictedlayer" substitutionGroup="gml:_Feature" type="myws:restrictedlayerType"/>
+</xsd:schema>

@@ -1,0 +1,3 @@
+DROP TABLE IF EXISTS t_product_portal;
+DROP TABLE IF EXISTS t_unit;
+DROP TABLE IF EXISTS t_portal;

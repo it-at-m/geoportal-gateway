@@ -1,0 +1,1836 @@
+<?xml version="1.0" encoding="UTF-8"?><WMS_Capabilities version="1.3.0" updateSequence="5538" xmlns="http://www.opengis.net/wms" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wms http://maps6.geosolutionsgroup.com/geoserver/schemas/wms/1.3.0/capabilities_1_3_0.xsd">
+  <Service>
+    <Name>WMS</Name>
+    <Title/>
+    <Abstract/>
+    <KeywordList/>
+    <OnlineResource xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson>GeoSolutions</ContactPerson>
+        <ContactOrganization/>
+      </ContactPersonPrimary>
+      <ContactPosition/>
+      <ContactAddress>
+        <AddressType/>
+        <Address/>
+        <City/>
+        <StateOrProvince/>
+        <PostCode/>
+        <Country/>
+      </ContactAddress>
+      <ContactVoiceTelephone/>
+      <ContactFacsimileTelephone/>
+      <ContactElectronicMailAddress/>
+    </ContactInformation>
+    <Fees>none</Fees>
+    <AccessConstraints>none</AccessConstraints>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>text/xml</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?SERVICE=WMS&amp;"/>
+            </Get>
+            <Post>
+              <OnlineResource xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?SERVICE=WMS&amp;"/>
+            </Post>
+          </HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/png</Format>
+        <Format>application/atom+xml</Format>
+        <Format>application/json;type=geojson</Format>
+        <Format>application/json;type=topojson</Format>
+        <Format>application/json;type=utfgrid</Format>
+        <Format>application/pdf</Format>
+        <Format>application/rss+xml</Format>
+        <Format>application/vnd.google-earth.kml+xml</Format>
+        <Format>application/vnd.google-earth.kml+xml;mode=networklink</Format>
+        <Format>application/vnd.google-earth.kmz</Format>
+        <Format>application/vnd.mapbox-vector-tile</Format>
+        <Format>image/geotiff</Format>
+        <Format>image/geotiff8</Format>
+        <Format>image/gif</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/png; mode=8bit</Format>
+        <Format>image/svg+xml</Format>
+        <Format>image/tiff</Format>
+        <Format>image/tiff8</Format>
+        <Format>image/vnd.jpeg-png</Format>
+        <Format>image/vnd.jpeg-png8</Format>
+        <Format>text/html; subtype=openlayers</Format>
+        <Format>text/html; subtype=openlayers2</Format>
+        <Format>text/html; subtype=openlayers3</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetMap>
+      <GetFeatureInfo>
+        <Format>text/plain</Format>
+        <Format>application/vnd.ogc.gml</Format>
+        <Format>text/xml</Format>
+        <Format>application/vnd.ogc.gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/html</Format>
+        <Format>application/json</Format>
+        <Format>application/unsupported-gfi-format</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetFeatureInfo>
+    </Request>
+    <Exception>
+      <Format>XML</Format>
+      <Format>INIMAGE</Format>
+      <Format>BLANK</Format>
+      <Format>JSON</Format>
+    </Exception>
+    <Layer>
+      <Title/>
+      <Abstract/>
+      <!--Limited list of EPSG projections:-->
+      <CRS>EPSG:4326</CRS>
+      <CRS>EPSG:3857</CRS>
+      <CRS>EPSG:900913</CRS>
+      <CRS>EPSG:3395</CRS>
+      <CRS>CRS:84</CRS>
+      <EX_GeographicBoundingBox>
+        <westBoundLongitude>-180.0</westBoundLongitude>
+        <eastBoundLongitude>180.00000731519998</eastBoundLongitude>
+        <southBoundLatitude>-90.00000030659999</southBoundLatitude>
+        <northBoundLatitude>90.0</northBoundLatitude>
+      </EX_GeographicBoundingBox>
+      <BoundingBox CRS="CRS:84" minx="-180.0" miny="-90.00000030659999" maxx="180.00000731519998" maxy="90.0"/>
+      <Layer queryable="1">
+        <Name>ne:ne-political</Name>
+        <Title>ne:ne-political</Title>
+        <Abstract/>
+        <KeywordList/>
+        <CRS>EPSG:4326</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-180.0</westBoundLongitude>
+          <eastBoundLongitude>180.0</eastBoundLongitude>
+          <southBoundLatitude>-90.0</southBoundLatitude>
+          <northBoundLatitude>90.0</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-180.0" miny="-90.0" maxx="180.0" maxy="90.0"/>
+        <BoundingBox CRS="EPSG:4326" minx="-90.0" miny="-180.0" maxx="90.0" maxy="180.0"/>
+        <Style>
+          <Name>default-style-ne:ne-political</Name>
+          <Title>ne:ne-political style</Title>
+          <Abstract>Default style for ne:ne-political layer</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane-political"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0">
+        <Name>osm:osm</Name>
+        <Title>osm</Title>
+        <Abstract/>
+        <KeywordList/>
+        <CRS>EPSG:3857</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-180.00000000000003</westBoundLongitude>
+          <eastBoundLongitude>180.00000000000003</eastBoundLongitude>
+          <southBoundLatitude>-85.06</southBoundLatitude>
+          <northBoundLatitude>85.06</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-180.00000000000003" miny="-85.06" maxx="180.00000000000003" maxy="85.06"/>
+        <BoundingBox CRS="EPSG:3857" minx="-2.0037508342789244E7" miny="-2.00489661040146E7" maxx="2.0037508342789244E7" maxy="2.0048966104014594E7"/>
+        <Attribution>
+          <Title>OSM Simple Dark | Rendering &lt;a href="https://www.geo-solutions.it/"&gt;GeoSolutions&lt;/a&gt; | Data © &lt;a href="http://www.openstreetmap.org/"&gt;OpenStreetMap&lt;/a&gt; contributors, &lt;a href="http://www.openstreetmap.org/copyright"&gt;ODbL&lt;/a&gt;</Title>
+        </Attribution>
+        <Style>
+          <Name>default-style-osm:osm</Name>
+          <Title>osm:osm style</Title>
+          <Abstract>Default style for osm:osm layer</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Aosm"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0">
+        <Name>osm:osm_marine_dark</Name>
+        <Title>osm:osm_marine_dark</Title>
+        <Abstract/>
+        <KeywordList/>
+        <CRS>EPSG:3857</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-180.00000000000003</westBoundLongitude>
+          <eastBoundLongitude>180.00000000000003</eastBoundLongitude>
+          <southBoundLatitude>-85.06</southBoundLatitude>
+          <northBoundLatitude>85.06</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-180.00000000000003" miny="-85.06" maxx="180.00000000000003" maxy="85.06"/>
+        <BoundingBox CRS="EPSG:3857" minx="-2.0037508342789244E7" miny="-2.00489661040146E7" maxx="2.0037508342789244E7" maxy="2.0048966104014594E7"/>
+        <Attribution>
+          <Title>OSM Marine Dark | Rendering &lt;a href="https://www.geo-solutions.it/"&gt;GeoSolutions&lt;/a&gt; | Data © &lt;a href="http://www.openstreetmap.org/"&gt;OpenStreetMap&lt;/a&gt; contributors, &lt;a href="http://www.openstreetmap.org/copyright"&gt;ODbL&lt;/a&gt;</Title>
+        </Attribution>
+        <Style>
+          <Name>default-style-osm:osm_marine_dark</Name>
+          <Title>osm:osm_marine_dark style</Title>
+          <Abstract>Default style for osm:osm_marine_dark layer</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Aosm_marine_dark"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0">
+        <Name>osm:osm_simple_dark</Name>
+        <Title>Simplified OSM with gray dark tones</Title>
+        <Abstract/>
+        <KeywordList/>
+        <CRS>EPSG:3857</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-180.00000000000003</westBoundLongitude>
+          <eastBoundLongitude>180.00000000000003</eastBoundLongitude>
+          <southBoundLatitude>-85.06</southBoundLatitude>
+          <northBoundLatitude>85.06</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-180.00000000000003" miny="-85.06" maxx="180.00000000000003" maxy="85.06"/>
+        <BoundingBox CRS="EPSG:3857" minx="-2.0037508342789244E7" miny="-2.00489661040146E7" maxx="2.0037508342789244E7" maxy="2.0048966104014594E7"/>
+        <Attribution>
+          <Title>OSM Simple Dark | Rendering &lt;a href="https://www.geo-solutions.it/"&gt;GeoSolutions&lt;/a&gt; | Data © &lt;a href="http://www.openstreetmap.org/"&gt;OpenStreetMap&lt;/a&gt; contributors, &lt;a href="http://www.openstreetmap.org/copyright"&gt;ODbL&lt;/a&gt;</Title>
+        </Attribution>
+        <Style>
+          <Name>default-style-osm:osm_simple_dark</Name>
+          <Title>osm:osm_simple_dark style</Title>
+          <Abstract>Default style for osm:osm_simple_dark layer</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Aosm_simple_dark"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0">
+        <Name>osm:osm_simple_light</Name>
+        <Title>Simplified OSM with gray light tones</Title>
+        <Abstract/>
+        <KeywordList/>
+        <CRS>EPSG:3857</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-180.00000000000003</westBoundLongitude>
+          <eastBoundLongitude>180.00000000000003</eastBoundLongitude>
+          <southBoundLatitude>-85.06</southBoundLatitude>
+          <northBoundLatitude>85.06</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-180.00000000000003" miny="-85.06" maxx="180.00000000000003" maxy="85.06"/>
+        <BoundingBox CRS="EPSG:3857" minx="-2.0037508342789244E7" miny="-2.00489661040146E7" maxx="2.0037508342789244E7" maxy="2.0048966104014594E7"/>
+        <Attribution>
+          <Title>OSM Simple Dark | Rendering &lt;a href="https://www.geo-solutions.it/"&gt;GeoSolutions&lt;/a&gt; | Data © &lt;a href="http://www.openstreetmap.org/"&gt;OpenStreetMap&lt;/a&gt; contributors, &lt;a href="http://www.openstreetmap.org/copyright"&gt;ODbL&lt;/a&gt;</Title>
+        </Attribution>
+        <Style>
+          <Name>default-style-osm:osm_simple_light</Name>
+          <Title>osm:osm_simple_light style</Title>
+          <Abstract>Default style for osm:osm_simple_light layer</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Aosm_simple_light"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:builtup_area</Name>
+        <Title>builtup_area</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>builtup_area</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-179.1296081542969</westBoundLongitude>
+          <eastBoundLongitude>178.44325256347662</eastBoundLongitude>
+          <southBoundLatitude>-52.982724914179855</southBoundLatitude>
+          <northBoundLatitude>70.87402746981633</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-179.1296081542969" miny="-52.982724914179855" maxx="178.44325256347662" maxy="70.87402746981633"/>
+        <BoundingBox CRS="EPSG:3857" minx="-1.9940616765734956E7" miny="-6979803.136120869" maxx="1.9864212010861725E7" maxy="1.1359336056859573E7"/>
+        <Style>
+          <Name>polygon</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a transparent red interior with a red outline</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Abuiltup_area"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>geotopo:g30</Name>
+        <Title>g30</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>g30_deflate</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-180.0</westBoundLongitude>
+          <eastBoundLongitude>180.00000731519998</eastBoundLongitude>
+          <southBoundLatitude>-90.00000030659999</southBoundLatitude>
+          <northBoundLatitude>90.0</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-180.0" miny="-90.00000030659999" maxx="180.00000731519998" maxy="90.0"/>
+        <BoundingBox CRS="EPSG:4326" minx="-90.00000030659999" miny="-180.0" maxx="90.0" maxy="180.00000731519998"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style for rasters</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=geotopo%3Ag30"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:icesheet_outlines</Name>
+        <Title>icesheet_outlines</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>icesheet_outlines</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-181.80002312068487</westBoundLongitude>
+          <eastBoundLongitude>181.80000515437916</eastBoundLongitude>
+          <southBoundLatitude>-85.09571426459677</southBoundLatitude>
+          <northBoundLatitude>-60.09736003238481</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-181.80002312068487" miny="-85.09571426459677" maxx="181.80000515437916" maxy="-60.09736003238481"/>
+        <BoundingBox CRS="EPSG:3857" minx="-2.0237886E7" miny="-2.0095302E7" maxx="2.0237884E7" maxy="-8421446.0"/>
+        <Style>
+          <Name>line</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a green line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Aicesheet_outlines"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:icesheet_polygons</Name>
+        <Title>icesheet_polygons</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>icesheet_polygons</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-181.7238819172029</westBoundLongitude>
+          <eastBoundLongitude>181.79960989565419</eastBoundLongitude>
+          <southBoundLatitude>-85.09571426459677</southBoundLatitude>
+          <northBoundLatitude>-60.09736003238481</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-181.7238819172029" miny="-85.09571426459677" maxx="181.79960989565419" maxy="-60.09736003238481"/>
+        <BoundingBox CRS="EPSG:3857" minx="-2.022941E7" miny="-2.0095302E7" maxx="2.023784E7" maxy="-8421446.0"/>
+        <Style>
+          <Name>polygon</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a transparent red interior with a red outline</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Aicesheet_polygons"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:land_polygons</Name>
+        <Title>land_polygons</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>land_polygons</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-181.5501477412542</westBoundLongitude>
+          <eastBoundLongitude>181.79876547928708</eastBoundLongitude>
+          <southBoundLatitude>-73.6041202916843</southBoundLatitude>
+          <northBoundLatitude>83.27191863728468</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-181.5501477412542" miny="-73.6041202916843" maxx="181.79876547928708" maxy="83.27191863728468"/>
+        <BoundingBox CRS="EPSG:3857" minx="-2.021007E7" miny="-1.2357559E7" maxx="2.0237746E7" maxy="1.807522E7"/>
+        <Style>
+          <Name>polygon</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a transparent red interior with a red outline</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Aland_polygons"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:landusages</Name>
+        <Title>osm_landusages</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>osm_landusages</Keyword>
+          <Keyword>pregeneralized)</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>2.536011420715718</westBoundLongitude>
+          <eastBoundLongitude>6.421881356137108</eastBoundLongitude>
+          <southBoundLatitude>49.73202800211652</southBoundLatitude>
+          <northBoundLatitude>51.514296404221575</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="2.536011420715718" miny="49.73202800211652" maxx="6.421881356137108" maxy="51.514296404221575"/>
+        <BoundingBox CRS="EPSG:3857" minx="282307.5" miny="6399996.5" maxx="714880.5625" maxy="6712776.0"/>
+        <Style>
+          <Name>generic</Name>
+          <Title>Generic</Title>
+          <Abstract>Generic style</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Alandusages"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ne:ne_10m_admin_0_boundary_lines_land</Name>
+        <Title>ne_10m_admin_0_boundary_lines_land</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_10m_admin_0_boundary_lines_land</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-141.00554863899987</westBoundLongitude>
+          <eastBoundLongitude>145.94101759835863</eastBoundLongitude>
+          <southBoundLatitude>-55.120923766999944</southBoundLatitude>
+          <northBoundLatitude>70.07531036400012</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-141.00554863899987" miny="-55.120923766999944" maxx="145.94101759835863" maxy="70.07531036400012"/>
+        <BoundingBox CRS="EPSG:4326" minx="-55.120923766999944" miny="-141.00554863899987" maxx="70.07531036400012" maxy="145.94101759835863"/>
+        <Style>
+          <Name>ne:ne_10m_boundaries</Name>
+          <Title>ne:ne_10m_boundaries</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_10m_admin_0_boundary_lines_land"/>
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>2.0E7</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:ne_10m_admin_0_boundary_lines_land</Name>
+        <Title>ne_10m_admin_0_boundary_lines_land</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_10m_admin_0_boundary_lines_land</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-142.415466308594</westBoundLongitude>
+          <eastBoundLongitude>142.387542724609</eastBoundLongitude>
+          <southBoundLatitude>-55.7469062805176</southBoundLatitude>
+          <northBoundLatitude>70.701301574707</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-142.415466308594" miny="-55.7469062805176" maxx="142.387542724609" maxy="70.701301574707"/>
+        <BoundingBox CRS="EPSG:4326" minx="-55.7469062805176" miny="-142.415466308594" maxx="70.701301574707" maxy="142.387542724609"/>
+        <Style>
+          <Name>line</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a green line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Ane_10m_admin_0_boundary_lines_land"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ne:ne_10m_admin_0_countries</Name>
+        <Title>ne_10m_admin_0_countries</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_10m_admin_0_countries</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-179.99999999999991</westBoundLongitude>
+          <eastBoundLongitude>180.0</eastBoundLongitude>
+          <southBoundLatitude>-89.99999999999994</southBoundLatitude>
+          <northBoundLatitude>83.63410065300008</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-179.99999999999991" miny="-89.99999999999994" maxx="180.0" maxy="83.63410065300008"/>
+        <BoundingBox CRS="EPSG:4326" minx="-89.99999999999994" miny="-179.99999999999991" maxx="83.63410065300008" maxy="180.0"/>
+        <Style>
+          <Name>ne:ne_10m_countries</Name>
+          <Title>ne:ne_10m_countries</Title>
+          <LegendURL width="85" height="40">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_10m_admin_0_countries"/>
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>2.0E7</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:ne_10m_admin_0_countries</Name>
+        <Title>ne_10m_admin_0_countries</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_10m_admin_0_countries</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-181.800003051758</westBoundLongitude>
+          <eastBoundLongitude>181.800003051758</eastBoundLongitude>
+          <southBoundLatitude>-90.8681716918945</southBoundLatitude>
+          <northBoundLatitude>84.5022735595703</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-181.800003051758" miny="-90.8681716918945" maxx="181.800003051758" maxy="84.5022735595703"/>
+        <BoundingBox CRS="EPSG:4326" minx="-90.8681716918945" miny="-181.800003051758" maxx="84.5022735595703" maxy="181.800003051758"/>
+        <Style>
+          <Name>polygon</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a transparent red interior with a red outline</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Ane_10m_admin_0_countries"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:ne_10m_admin_0_countries_points</Name>
+        <Title>ne_10m_admin_0_countries_points</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_10m_admin_0_countries_points</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-178.152213873015</westBoundLongitude>
+          <eastBoundLongitude>178.684370812282</eastBoundLongitude>
+          <southBoundLatitude>-76.6056454404999</southBoundLatitude>
+          <northBoundLatitude>79.8517723655</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-178.152213873015" miny="-76.6056454404999" maxx="178.684370812282" maxy="79.8517723655"/>
+        <BoundingBox CRS="EPSG:4326" minx="-76.6056454404999" miny="-178.152213873015" maxx="79.8517723655" maxy="178.684370812282"/>
+        <Style>
+          <Name>point</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a purple square</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Ane_10m_admin_0_countries_points"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ne:ne_10m_admin_0_disputed_areas</Name>
+        <Title>ne_10m_admin_0_disputed_areas</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_10m_admin_0_disputed_areas</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-171.0865372389999</westBoundLongitude>
+          <eastBoundLongitude>172.05933856500008</eastBoundLongitude>
+          <southBoundLatitude>-59.47275155999995</southBoundLatitude>
+          <northBoundLatitude>80.83283112200007</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-171.0865372389999" miny="-59.47275155999995" maxx="172.05933856500008" maxy="80.83283112200007"/>
+        <BoundingBox CRS="EPSG:4326" minx="-59.47275155999995" miny="-171.0865372389999" maxx="80.83283112200007" maxy="172.05933856500008"/>
+        <Style>
+          <Name>ne:ne_10m_disputed</Name>
+          <Title>ne:ne_10m_disputed</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_10m_admin_0_disputed_areas"/>
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>2.0E7</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:ne_10m_admin_0_sovereignty</Name>
+        <Title>ne_10m_admin_0_sovereignty</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_10m_admin_0_sovereignty</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-181.800003051758</westBoundLongitude>
+          <eastBoundLongitude>181.800003051758</eastBoundLongitude>
+          <southBoundLatitude>-90.8681716918945</southBoundLatitude>
+          <northBoundLatitude>84.5022735595703</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-181.800003051758" miny="-90.8681716918945" maxx="181.800003051758" maxy="84.5022735595703"/>
+        <BoundingBox CRS="EPSG:4326" minx="-90.8681716918945" miny="-181.800003051758" maxx="84.5022735595703" maxy="181.800003051758"/>
+        <Style>
+          <Name>polygon</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a transparent red interior with a red outline</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Ane_10m_admin_0_sovereignty"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ne:ne_10m_admin_1_states_provinces</Name>
+        <Title>ne_10m_admin_1_states_provinces</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_10m_admin_1_states_provinces</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-179.99999999999991</westBoundLongitude>
+          <eastBoundLongitude>180.0</eastBoundLongitude>
+          <southBoundLatitude>-89.99999999999994</southBoundLatitude>
+          <northBoundLatitude>83.63410065300008</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-179.99999999999991" miny="-89.99999999999994" maxx="180.0" maxy="83.63410065300008"/>
+        <BoundingBox CRS="EPSG:4326" minx="-89.99999999999994" miny="-179.99999999999991" maxx="83.63410065300008" maxy="180.0"/>
+        <Style>
+          <Name>ne:ne_10m_states_provinces</Name>
+          <Title>ne:ne_10m_states_provinces</Title>
+          <LegendURL width="158" height="40">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_10m_admin_1_states_provinces"/>
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>2.0E7</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ne:ne_10m_admin_1_states_provinces_lines</Name>
+        <Title>ne_10m_admin_1_states_provinces_lines</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_10m_admin_1_states_provinces_lines</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-178.13708564098948</westBoundLongitude>
+          <eastBoundLongitude>178.44862226790326</eastBoundLongitude>
+          <southBoundLatitude>-49.25087001983553</southBoundLatitude>
+          <northBoundLatitude>81.12853131646705</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-178.13708564098948" miny="-49.25087001983553" maxx="178.44862226790326" maxy="81.12853131646705"/>
+        <BoundingBox CRS="EPSG:4326" minx="-49.25087001983553" miny="-178.13708564098948" maxx="81.12853131646705" maxy="178.44862226790326"/>
+        <Style>
+          <Name>ne:ne_10m_states_provinces_lines</Name>
+          <Title>ne:ne_10m_states_provinces_lines</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_10m_admin_1_states_provinces_lines"/>
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>2.0E7</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:ne_10m_admin_1_states_provinces_lines</Name>
+        <Title>ne_10m_admin_1_states_provinces_lines</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_10m_admin_1_states_provinces_lines</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-140.647750854492</westBoundLongitude>
+          <eastBoundLongitude>180.036163330078</eastBoundLongitude>
+          <southBoundLatitude>-47.2567481994629</southBoundLatitude>
+          <northBoundLatitude>81.7672653198242</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-140.647750854492" miny="-47.2567481994629" maxx="180.036163330078" maxy="81.7672653198242"/>
+        <BoundingBox CRS="EPSG:4326" minx="-47.2567481994629" miny="-140.647750854492" maxx="81.7672653198242" maxy="180.036163330078"/>
+        <Style>
+          <Name>line</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a green line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Ane_10m_admin_1_states_provinces_lines"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>myws:protectedlayer</Name>
+        <Title>protectedlayer</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_10m_admin_2_counties_lakes</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-179.1435033839999</westBoundLongitude>
+          <eastBoundLongitude>179.78093509200005</eastBoundLongitude>
+          <southBoundLatitude>17.682766018000052</southBoundLatitude>
+          <northBoundLatitude>71.41250234600005</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-179.1435033839999" miny="17.682766018000052" maxx="179.78093509200005" maxy="71.41250234600005"/>
+        <BoundingBox CRS="EPSG:4326" minx="17.682766018000052" miny="-179.1435033839999" maxx="71.41250234600005" maxy="179.78093509200005"/>
+        <Style>
+          <Name>myws:protectedlayer</Name>
+          <Title>protectedlayer</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_10m_admin_2_counties_lakes"/>
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>4000000.0</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ne:ne_10m_admin_2_counties_lines</Name>
+        <Title>ne_10m_admin_2_counties_lines</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_10m_admin_2_counties_lines</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-171.1576557159385</westBoundLongitude>
+          <eastBoundLongitude>-65.63296464790017</eastBoundLongitude>
+          <southBoundLatitude>17.949611721503743</southBoundLatitude>
+          <northBoundLatitude>68.50729796800005</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-171.1576557159385" miny="17.949611721503743" maxx="-65.63296464790017" maxy="68.50729796800005"/>
+        <BoundingBox CRS="EPSG:4326" minx="17.949611721503743" miny="-171.1576557159385" maxx="68.50729796800005" maxy="-65.63296464790017"/>
+        <Style>
+          <Name>myws:protectedlayer_lines</Name>
+          <Title>myws:protectedlayer_lines</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_10m_admin_2_counties_lines"/>
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>8000000.0</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>myws:restrictedlayer</Name>
+        <Title>restrictedlayer</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>restrictedlayer</Keyword>
+          <Keyword>pregeneralized)</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-180.0</westBoundLongitude>
+          <eastBoundLongitude>180.0</eastBoundLongitude>
+          <southBoundLatitude>-90.0</southBoundLatitude>
+          <northBoundLatitude>90.0</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-180.0" miny="-90.0" maxx="180.0" maxy="90.0"/>
+        <BoundingBox CRS="EPSG:4326" minx="-90.0" miny="-180.0" maxx="90.0" maxy="180.0"/>
+        <Style>
+          <Name>polygon</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a transparent red interior with a red outline</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Arestrictedlayer"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:ne_10m_coastline</Name>
+        <Title>ne_10m_coastline</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_10m_coastline</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-181.800003051758</westBoundLongitude>
+          <eastBoundLongitude>181.800003051758</eastBoundLongitude>
+          <southBoundLatitude>-86.0662231445313</southBoundLatitude>
+          <northBoundLatitude>84.4783782958984</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-181.800003051758" miny="-86.0662231445313" maxx="181.800003051758" maxy="84.4783782958984"/>
+        <BoundingBox CRS="EPSG:4326" minx="-86.0662231445313" miny="-181.800003051758" maxx="84.4783782958984" maxy="181.800003051758"/>
+        <Style>
+          <Name>line</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a green line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Ane_10m_coastline"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ne:ne_10m_geography_marine_polys</Name>
+        <Title>ne_10m_geography_marine_polys</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_10m_geography_marine_polys</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-180.0</westBoundLongitude>
+          <eastBoundLongitude>179.99989708894586</eastBoundLongitude>
+          <southBoundLatitude>-85.19206064243458</southBoundLatitude>
+          <northBoundLatitude>89.99999999999996</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-180.0" miny="-85.19206064243458" maxx="179.99989708894586" maxy="89.99999999999996"/>
+        <BoundingBox CRS="EPSG:4326" minx="-85.19206064243458" miny="-180.0" maxx="89.99999999999996" maxy="179.99989708894586"/>
+        <Style>
+          <Name>ne:ne_10m_marine_polys</Name>
+          <Title>ne:ne_10m_marine_polys</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_10m_geography_marine_polys"/>
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>2.0E7</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:ne_10m_geography_marine_polys</Name>
+        <Title>ne_10m_geography_marine_polys</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_10m_geography_marine_polys</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-180.0</westBoundLongitude>
+          <eastBoundLongitude>180.0</eastBoundLongitude>
+          <southBoundLatitude>-90.0</southBoundLatitude>
+          <northBoundLatitude>90.0</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-180.0" miny="-90.0" maxx="180.0" maxy="90.0"/>
+        <BoundingBox CRS="EPSG:4326" minx="-90.0" miny="-180.0" maxx="90.0" maxy="180.0"/>
+        <Style>
+          <Name>polygon</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a transparent red interior with a red outline</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Ane_10m_geography_marine_polys"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ne:ne_10m_ocean_scale_rank</Name>
+        <Title>ne_10m_ocean_scale_rank</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_10m_ocean_scale_rank</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-179.99999999999991</westBoundLongitude>
+          <eastBoundLongitude>180.0</eastBoundLongitude>
+          <southBoundLatitude>-85.22193775799991</southBoundLatitude>
+          <northBoundLatitude>90.00000000000006</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-179.99999999999991" miny="-85.22193775799991" maxx="180.0" maxy="90.00000000000006"/>
+        <BoundingBox CRS="EPSG:4326" minx="-85.22193775799991" miny="-179.99999999999991" maxx="90.00000000000006" maxy="180.0"/>
+        <Style>
+          <Name>ne:ne_10m_ocean</Name>
+          <Title>ne:ne_10m_ocean</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_10m_ocean_scale_rank"/>
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>5.0E7</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ne:ne_10m_populated_places</Name>
+        <Title>ne_10m_populated_places</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_10m_populated_places</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-179.5899789</westBoundLongitude>
+          <eastBoundLongitude>179.3833036</eastBoundLongitude>
+          <southBoundLatitude>-89.9999998</southBoundLatitude>
+          <northBoundLatitude>82.4833232</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-179.5899789" miny="-89.9999998" maxx="179.3833036" maxy="82.4833232"/>
+        <BoundingBox CRS="EPSG:4326" minx="-89.9999998" miny="-179.5899789" maxx="82.4833232" maxy="179.3833036"/>
+        <Style>
+          <Name>ne:ne_10m_populated_places</Name>
+          <Title>ne:ne_10m_populated_places</Title>
+          <LegendURL width="134" height="120">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_10m_populated_places"/>
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>2.0E7</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:ne_10m_populated_places</Name>
+        <Title>ne_10m_populated_places</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_10m_populated_places</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-181.384841918945</westBoundLongitude>
+          <eastBoundLongitude>181.178176879883</eastBoundLongitude>
+          <southBoundLatitude>-75.3682403564453</southBoundLatitude>
+          <northBoundLatitude>83.2686614990234</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-181.384841918945" miny="-75.3682403564453" maxx="181.178176879883" maxy="83.2686614990234"/>
+        <BoundingBox CRS="EPSG:4326" minx="-75.3682403564453" miny="-181.384841918945" maxx="83.2686614990234" maxy="181.178176879883"/>
+        <Style>
+          <Name>point</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a purple square</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Ane_10m_populated_places"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ne:ne_10m_roads</Name>
+        <Title>ne_10m_roads</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_10m_roads</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-166.532487587878</westBoundLongitude>
+          <eastBoundLongitude>178.41907902319156</eastBoundLongitude>
+          <southBoundLatitude>-55.11212400026874</southBoundLatitude>
+          <northBoundLatitude>71.17768427804648</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-166.532487587878" miny="-55.11212400026874" maxx="178.41907902319156" maxy="71.17768427804648"/>
+        <BoundingBox CRS="EPSG:4326" minx="-55.11212400026874" miny="-166.532487587878" maxx="71.17768427804648" maxy="178.41907902319156"/>
+        <Style>
+          <Name>ne:ne_10m_roads</Name>
+          <Title>ne:ne_10m_roads</Title>
+          <LegendURL width="64" height="160">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_10m_roads"/>
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>2.0E7</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ne:ne_10m_urban_areas</Name>
+        <Title>ne_10m_urban_areas</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_10m_urban_areas</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-157.99118261729797</westBoundLongitude>
+          <eastBoundLongitude>178.0338339830011</eastBoundLongitude>
+          <southBoundLatitude>-51.05303741160215</southBoundLatitude>
+          <northBoundLatitude>69.76985509228818</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-157.99118261729797" miny="-51.05303741160215" maxx="178.0338339830011" maxy="69.76985509228818"/>
+        <BoundingBox CRS="EPSG:4326" minx="-51.05303741160215" miny="-157.99118261729797" maxx="69.76985509228818" maxy="178.0338339830011"/>
+        <Style>
+          <Name>ne:ne_10m_urban</Name>
+          <Title>ne:ne_10m_urban</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_10m_urban_areas"/>
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>2.0E7</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:ne_10m_urban_areas</Name>
+        <Title>ne_10m_urban_areas</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_10m_urban_areas</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-159.671325683594</westBoundLongitude>
+          <eastBoundLongitude>179.713973999023</eastBoundLongitude>
+          <southBoundLatitude>-44.1649017333984</southBoundLatitude>
+          <northBoundLatitude>70.3367004394531</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-159.671325683594" miny="-44.1649017333984" maxx="179.713973999023" maxy="70.3367004394531"/>
+        <BoundingBox CRS="EPSG:4326" minx="-90.0" miny="-180.0" maxx="90.0" maxy="180.0"/>
+        <Style>
+          <Name>polygon</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a transparent red interior with a red outline</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Ane_10m_urban_areas"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ne:ne_110m_admin_0_countries</Name>
+        <Title>ne_110m_admin_0_countries</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_110m_admin_0_countries</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-180.0</westBoundLongitude>
+          <eastBoundLongitude>180.0</eastBoundLongitude>
+          <southBoundLatitude>-90.0</southBoundLatitude>
+          <northBoundLatitude>90.0</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-180.0" miny="-90.0" maxx="180.0" maxy="90.0"/>
+        <BoundingBox CRS="EPSG:4326" minx="-90.0" miny="-180.0" maxx="90.0" maxy="180.0"/>
+        <Style>
+          <Name>ne:ne_110m_countries</Name>
+          <Title>ne:ne_110m_countries</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_110m_admin_0_countries"/>
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>7.0E7</MinScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ne:ne_110m_admin_1_states_provinces_lines</Name>
+        <Title>ne_110m_admin_1_states_provinces_lines</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_110m_admin_1_states_provinces_lines</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-124.21380794970611</westBoundLongitude>
+          <eastBoundLongitude>-70.64573401557254</eastBoundLongitude>
+          <southBoundLatitude>29.689480088819238</southBoundLatitude>
+          <northBoundLatitude>49.00563955341474</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-124.21380794970611" miny="29.689480088819238" maxx="-70.64573401557254" maxy="49.00563955341474"/>
+        <BoundingBox CRS="EPSG:4326" minx="29.689480088819238" miny="-124.21380794970611" maxx="49.00563955341474" maxy="-70.64573401557254"/>
+        <Style>
+          <Name>ne:ne_110m_states_lines</Name>
+          <Title>ne:ne_110m_states_lines</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_110m_admin_1_states_provinces_lines"/>
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>7.0E7</MinScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ne:ne_110m_geography_marine_polys</Name>
+        <Title>ne_110m_geography_marine_polys</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_110m_geography_marine_polys</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-180.0</westBoundLongitude>
+          <eastBoundLongitude>179.99989708894586</eastBoundLongitude>
+          <southBoundLatitude>-85.19206064243458</southBoundLatitude>
+          <northBoundLatitude>89.99999999999996</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-180.0" miny="-85.19206064243458" maxx="179.99989708894586" maxy="89.99999999999996"/>
+        <BoundingBox CRS="EPSG:4326" minx="-85.19206064243458" miny="-180.0" maxx="89.99999999999996" maxy="179.99989708894586"/>
+        <Style>
+          <Name>ne:ne_110m_geography_marine_polys</Name>
+          <Title>ne:ne_110m_geography_marine_polys</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_110m_geography_marine_polys"/>
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>7.0E7</MinScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ne:ne_110m_ocean</Name>
+        <Title>ne_110m_ocean</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_110m_ocean</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-180.0</westBoundLongitude>
+          <eastBoundLongitude>180.0</eastBoundLongitude>
+          <southBoundLatitude>-90.0</southBoundLatitude>
+          <northBoundLatitude>90.0</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-180.0" miny="-90.0" maxx="180.0" maxy="90.0"/>
+        <BoundingBox CRS="EPSG:4326" minx="-90.0" miny="-180.0" maxx="90.0" maxy="180.0"/>
+        <Style>
+          <Name>ne:ne_110m_ocean</Name>
+          <Title>ne:ne_110m_ocean</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_110m_ocean"/>
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>5.0E7</MinScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ne:ne_110m_populated_places</Name>
+        <Title>ne_110m_populated_places</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_110m_populated_places</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-180.0</westBoundLongitude>
+          <eastBoundLongitude>180.0</eastBoundLongitude>
+          <southBoundLatitude>-90.0</southBoundLatitude>
+          <northBoundLatitude>90.0</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-180.0" miny="-90.0" maxx="180.0" maxy="90.0"/>
+        <BoundingBox CRS="EPSG:4326" minx="-90.0" miny="-180.0" maxx="90.0" maxy="180.0"/>
+        <Style>
+          <Name>ne:ne_110m_populated_places</Name>
+          <Title>ne:ne_110m_populated_places</Title>
+          <LegendURL width="75" height="40">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_110m_populated_places"/>
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>7.0E7</MinScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ne:ne_50m_admin_0_breakaway_disputed_areas</Name>
+        <Title>ne_50m_admin_0_breakaway_disputed_areas</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_50m_admin_0_breakaway_disputed_areas</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-58.42730668804971</westBoundLongitude>
+          <eastBoundLongitude>148.83714806538353</eastBoundLongitude>
+          <southBoundLatitude>1.475362453615233</southBoundLatitude>
+          <northBoundLatitude>48.70561341257377</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-58.42730668804971" miny="1.475362453615233" maxx="148.83714806538353" maxy="48.70561341257377"/>
+        <BoundingBox CRS="EPSG:4326" minx="1.475362453615233" miny="-58.42730668804971" maxx="48.70561341257377" maxy="148.83714806538353"/>
+        <Style>
+          <Name>ne:ne_50m_admin_0_breakaway_disputed_areas</Name>
+          <Title>ne:ne_50m_admin_0_breakaway_disputed_areas</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_50m_admin_0_breakaway_disputed_areas"/>
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>2.0E7</MinScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ne:ne_50m_admin_0_countries</Name>
+        <Title>ne_50m_admin_0_countries</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_50m_admin_0_countries</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-180.0</westBoundLongitude>
+          <eastBoundLongitude>180.0</eastBoundLongitude>
+          <southBoundLatitude>-89.99892578125002</southBoundLatitude>
+          <northBoundLatitude>83.599609375</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-180.0" miny="-89.99892578125002" maxx="180.0" maxy="83.599609375"/>
+        <BoundingBox CRS="EPSG:4326" minx="-89.99892578125002" miny="-180.0" maxx="83.599609375" maxy="180.0"/>
+        <Style>
+          <Name>ne:ne_50m_countries</Name>
+          <Title>ne:ne_50m_countries</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_50m_admin_0_countries"/>
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>2.0E7</MinScaleDenominator>
+        <MaxScaleDenominator>7.0E7</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ne:ne_50m_admin_1_states_provinces_lakes</Name>
+        <Title>ne_50m_admin_1_states_provinces_lakes</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_50m_admin_1_states_provinces_lakes</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-180.0</westBoundLongitude>
+          <eastBoundLongitude>180.0</eastBoundLongitude>
+          <southBoundLatitude>-46.962890625</southBoundLatitude>
+          <northBoundLatitude>83.11611378149931</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-180.0" miny="-46.962890625" maxx="180.0" maxy="83.11611378149931"/>
+        <BoundingBox CRS="EPSG:4326" minx="-46.962890625" miny="-180.0" maxx="83.11611378149931" maxy="180.0"/>
+        <Style>
+          <Name>ne:ne_50m_states</Name>
+          <Title>ne:ne_50m_states</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_50m_admin_1_states_provinces_lakes"/>
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>2.0E7</MinScaleDenominator>
+        <MaxScaleDenominator>7.0E7</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ne:ne_50m_admin_1_states_provinces_lines</Name>
+        <Title>ne_50m_admin_1_states_provinces_lines</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_50m_admin_1_states_provinces_lines</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-139.05651882377236</westBoundLongitude>
+          <eastBoundLongitude>174.4684517757288</eastBoundLongitude>
+          <southBoundLatitude>-38.071604464492154</southBoundLatitude>
+          <northBoundLatitude>78.68672274339082</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-139.05651882377236" miny="-38.071604464492154" maxx="174.4684517757288" maxy="78.68672274339082"/>
+        <BoundingBox CRS="EPSG:4326" minx="-38.071604464492154" miny="-139.05651882377236" maxx="78.68672274339082" maxy="174.4684517757288"/>
+        <Style>
+          <Name>ne:ne_50m_states_provinces_lines</Name>
+          <Title>ne:ne_50m_states_provinces_lines</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_50m_admin_1_states_provinces_lines"/>
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>2.0E7</MinScaleDenominator>
+        <MaxScaleDenominator>7.0E7</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ne:ne_50m_geography_marine_polys</Name>
+        <Title>ne_50m_geography_marine_polys</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_50m_geography_marine_polys</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-180.0</westBoundLongitude>
+          <eastBoundLongitude>179.99989708894586</eastBoundLongitude>
+          <southBoundLatitude>-85.19206064243458</southBoundLatitude>
+          <northBoundLatitude>89.99999999999996</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-180.0" miny="-85.19206064243458" maxx="179.99989708894586" maxy="89.99999999999996"/>
+        <BoundingBox CRS="EPSG:4326" minx="-85.19206064243458" miny="-180.0" maxx="89.99999999999996" maxy="179.99989708894586"/>
+        <Style>
+          <Name>ne:ne_50m_marine_polys</Name>
+          <Title>ne:ne_50m_marine_polys</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_50m_geography_marine_polys"/>
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>2.0E7</MinScaleDenominator>
+        <MaxScaleDenominator>7.0E7</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ne:ne_50m_populated_places</Name>
+        <Title>ne_50m_populated_places</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_50m_populated_places</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-175.2205645</westBoundLongitude>
+          <eastBoundLongitude>179.2166471</eastBoundLongitude>
+          <southBoundLatitude>-89.9999998</southBoundLatitude>
+          <northBoundLatitude>78.2166844</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-175.2205645" miny="-89.9999998" maxx="179.2166471" maxy="78.2166844"/>
+        <BoundingBox CRS="EPSG:4326" minx="-89.9999998" miny="-175.2205645" maxx="78.2166844" maxy="179.2166471"/>
+        <Style>
+          <Name>ne:ne_50m_populated_places</Name>
+          <Title>ne:ne_50m_populated_places</Title>
+          <LegendURL width="134" height="120">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_50m_populated_places"/>
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>2.0E7</MinScaleDenominator>
+        <MaxScaleDenominator>7.0E7</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>ne:ne_50m_urban_areas</Name>
+        <Title>ne_50m_urban_areas</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>ne_50m_urban_areas</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-157.98399471741934</westBoundLongitude>
+          <eastBoundLongitude>174.97002322824852</eastBoundLongitude>
+          <southBoundLatitude>-46.26844166441431</southBoundLatitude>
+          <northBoundLatitude>69.35127106391279</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-157.98399471741934" miny="-46.26844166441431" maxx="174.97002322824852" maxy="69.35127106391279"/>
+        <BoundingBox CRS="EPSG:4326" minx="-46.26844166441431" miny="-157.98399471741934" maxx="69.35127106391279" maxy="174.97002322824852"/>
+        <Style>
+          <Name>ne:ne_50m_urban</Name>
+          <Title>ne:ne_50m_urban</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ne%3Ane_50m_urban_areas"/>
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>2.0E7</MinScaleDenominator>
+        <MaxScaleDenominator>7.0E7</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:osm_admin</Name>
+        <Title>osm_admin</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>osm_admin</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>2.5223163234857897</westBoundLongitude>
+          <eastBoundLongitude>6.427429575910651</eastBoundLongitude>
+          <southBoundLatitude>49.48659585188131</southBoundLatitude>
+          <northBoundLatitude>51.53950767227534</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="2.5223163234857897" miny="49.48659585188131" maxx="6.427429575910651" maxy="51.53950767227534"/>
+        <BoundingBox CRS="EPSG:3857" minx="280782.96875" miny="6357833.5" maxx="715498.1875" maxy="6717287.0"/>
+        <Style>
+          <Name>generic</Name>
+          <Title>Generic</Title>
+          <Abstract>Generic style</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Aosm_admin"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:osm_amenities</Name>
+        <Title>osm_amenities</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>osm_amenities</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>2.52363123248292</westBoundLongitude>
+          <eastBoundLongitude>6.4279764253398595</eastBoundLongitude>
+          <southBoundLatitude>49.670429709470326</southBoundLatitude>
+          <northBoundLatitude>51.55397367331955</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="2.52363123248292" miny="49.670429709470326" maxx="6.4279764253398595" maxy="51.55397367331955"/>
+        <BoundingBox CRS="EPSG:3857" minx="280929.34375" miny="6389394.5" maxx="715559.0625" maxy="6719876.5"/>
+        <Style>
+          <Name>generic</Name>
+          <Title>Generic</Title>
+          <Abstract>Generic style</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Aosm_amenities"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:osm_boundary</Name>
+        <Title>osm_boundary</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>osm_boundary</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>1.9632134527173515</westBoundLongitude>
+          <eastBoundLongitude>6.448504052476095</eastBoundLongitude>
+          <southBoundLatitude>49.532335022973356</southBoundLatitude>
+          <northBoundLatitude>51.99808109942991</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="1.9632134527173515" miny="49.532335022973356" maxx="6.448504052476095" maxy="51.99808109942991"/>
+        <BoundingBox CRS="EPSG:3857" minx="218543.921875" miny="6365675.0" maxx="717844.1875" maxy="6799778.5"/>
+        <Style>
+          <Name>line</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a green line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Aosm_boundary"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:osm_buildings</Name>
+        <Title>osm_buildings</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>osm_buildings</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>2.5223772404909943</westBoundLongitude>
+          <eastBoundLongitude>6.408851854388007</eastBoundLongitude>
+          <southBoundLatitude>49.95998020528088</southBoundLatitude>
+          <northBoundLatitude>51.50864696507901</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="2.5223772404909943" miny="49.95998020528088" maxx="6.408851854388007" maxy="51.50864696507901"/>
+        <BoundingBox CRS="EPSG:3857" minx="280789.75" miny="6439348.0" maxx="713430.125" maxy="6711765.5"/>
+        <Style>
+          <Name>generic</Name>
+          <Title>Generic</Title>
+          <Abstract>Generic style</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Aosm_buildings"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:osm_housenumbers</Name>
+        <Title>osm_housenumbers</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>osm_housenumbers</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>2.5331699371826373</westBoundLongitude>
+          <eastBoundLongitude>6.4095508559684635</eastBoundLongitude>
+          <southBoundLatitude>50.1333222467049</southBoundLatitude>
+          <northBoundLatitude>51.509871395817065</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="2.5331699371826373" miny="50.1333222467049" maxx="6.4095508559684635" maxy="51.509871395817065"/>
+        <BoundingBox CRS="EPSG:3857" minx="281991.1875" miny="6469397.0" maxx="713507.9375" maxy="6711984.5"/>
+        <Style>
+          <Name>generic</Name>
+          <Title>Generic</Title>
+          <Abstract>Generic style</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Aosm_housenumbers"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:osm_places</Name>
+        <Title>osm_places</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>osm_places</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>2.6212160639674016</westBoundLongitude>
+          <eastBoundLongitude>6.4261814791127785</eastBoundLongitude>
+          <southBoundLatitude>49.49676640115351</southBoundLatitude>
+          <northBoundLatitude>51.50854632547268</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="2.6212160639674016" miny="49.49676640115351" maxx="6.4261814791127785" maxy="51.50854632547268"/>
+        <BoundingBox CRS="EPSG:3857" minx="291792.4375" miny="6359576.5" maxx="715359.25" maxy="6711747.5"/>
+        <Style>
+          <Name>point</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a purple square</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Aosm_places"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:osm_transport_areas</Name>
+        <Title>osm_transport_areas</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>osm_transport_areas</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>2.5795364805724668</westBoundLongitude>
+          <eastBoundLongitude>6.29874141988411</eastBoundLongitude>
+          <southBoundLatitude>49.87472142378777</southBoundLatitude>
+          <northBoundLatitude>51.47171128707303</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="2.5795364805724668" miny="49.87472142378777" maxx="6.29874141988411" maxy="51.47171128707303"/>
+        <BoundingBox CRS="EPSG:3857" minx="287152.6875" miny="6424608.0" maxx="701172.6875" maxy="6705162.0"/>
+        <Style>
+          <Name>generic</Name>
+          <Title>Generic</Title>
+          <Abstract>Generic style</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Aosm_transport_areas"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:osm_transport_points</Name>
+        <Title>osm_transport_points</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>osm_transport_points</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>2.5234599911318845</westBoundLongitude>
+          <eastBoundLongitude>6.42736613239371</eastBoundLongitude>
+          <southBoundLatitude>49.58353554256081</southBoundLatitude>
+          <northBoundLatitude>51.52030847161657</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="2.5234599911318845" miny="49.58353554256081" maxx="6.42736613239371" maxy="51.52030847161657"/>
+        <BoundingBox CRS="EPSG:3857" minx="280910.28125" miny="6374461.5" maxx="715491.125" maxy="6713851.5"/>
+        <Style>
+          <Name>point</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a purple square</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Aosm_transport_points"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:roads</Name>
+        <Title>osm_roads</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>osm_roads</Keyword>
+          <Keyword>pregeneralized)</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>2.524650539606869</westBoundLongitude>
+          <eastBoundLongitude>6.426450412250961</eastBoundLongitude>
+          <southBoundLatitude>49.604783148989995</southBoundLatitude>
+          <northBoundLatitude>51.50923682052415</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="2.524650539606869" miny="49.604783148989995" maxx="6.426450412250961" maxy="51.50923682052415"/>
+        <BoundingBox CRS="EPSG:3857" minx="281042.8125" miny="6378110.5" maxx="715389.1875" maxy="6711871.0"/>
+        <Style>
+          <Name>line</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a green line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Aroads"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="0" opaque="0">
+        <Name>s2cloudless:s2cloudless</Name>
+        <Title>s2cloudless</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>s2cloudless</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoPackage (mosaic)</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-180.0</westBoundLongitude>
+          <eastBoundLongitude>180.0</eastBoundLongitude>
+          <southBoundLatitude>-90.0</southBoundLatitude>
+          <northBoundLatitude>90.0</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-180.0" miny="-90.0" maxx="180.0" maxy="90.0"/>
+        <BoundingBox CRS="EPSG:4326" minx="-90.0" miny="-180.0" maxx="90.0" maxy="180.0"/>
+        <Attribution>
+          <Title>Sentinel-2 cloudless – https://s2maps.eu by EOX IT Services GmbH(Contains modified Copernicus Sentinel data 2016 &amp; 2017)</Title>
+        </Attribution>
+        <Style>
+          <Name>raster</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style for rasters</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=s2cloudless%3As2cloudless"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:simplified_land_polygons</Name>
+        <Title>simplified_land_polygons</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>simplified_land_polygons</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-181.80002312068487</westBoundLongitude>
+          <eastBoundLongitude>181.80002312068487</eastBoundLongitude>
+          <southBoundLatitude>-77.5614079156303</southBoundLatitude>
+          <northBoundLatitude>83.82518457494866</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-181.80002312068487" miny="-77.5614079156303" maxx="181.80002312068487" maxy="83.82518457494866"/>
+        <BoundingBox CRS="EPSG:3857" minx="-2.0237886E7" miny="-1.4137982E7" maxx="2.0237886E7" maxy="1.8623692E7"/>
+        <Style>
+          <Name>polygon</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a transparent red interior with a red outline</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Asimplified_land_polygons"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:simplified_water_polygons</Name>
+        <Title>simplified_water_polygons</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>simplified_water_polygons</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-181.8004722783269</westBoundLongitude>
+          <eastBoundLongitude>181.8004722783269</eastBoundLongitude>
+          <southBoundLatitude>-85.20392916350697</southBoundLatitude>
+          <northBoundLatitude>85.20404182373363</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-181.8004722783269" miny="-85.20392916350697" maxx="181.8004722783269" maxy="85.20404182373363"/>
+        <BoundingBox CRS="EPSG:3857" minx="-2.0237936E7" miny="-2.0237784E7" maxx="2.0237936E7" maxy="2.0237934E7"/>
+        <Style>
+          <Name>polygon</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a transparent red interior with a red outline</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Asimplified_water_polygons"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>tm:true_marble</Name>
+        <Title>true_marble</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>tm_deflate</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-180.0</westBoundLongitude>
+          <eastBoundLongitude>180.0</eastBoundLongitude>
+          <southBoundLatitude>-90.0</southBoundLatitude>
+          <northBoundLatitude>90.0</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-180.0" miny="-90.0" maxx="180.0" maxy="90.0"/>
+        <BoundingBox CRS="EPSG:4326" minx="-90.0" miny="-180.0" maxx="90.0" maxy="180.0"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style for rasters</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=tm%3Atrue_marble"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:water_polygons</Name>
+        <Title>water_polygons</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>water_polygons</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-2.0237886E7</westBoundLongitude>
+          <eastBoundLongitude>2.0237886E7</eastBoundLongitude>
+          <southBoundLatitude>-1.4947463E7</southBoundLatitude>
+          <northBoundLatitude>2.0211564E7</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-2.0237886E7" miny="-1.4947463E7" maxx="2.0237886E7" maxy="2.0211564E7"/>
+        <BoundingBox CRS="EPSG:3857" minx="-2.0237886E7" miny="-1.4947463E7" maxx="2.0237886E7" maxy="2.0211564E7"/>
+        <Style>
+          <Name>polygon</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a transparent red interior with a red outline</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Awater_polygons"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:waterareas</Name>
+        <Title>osm_waterareas</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>osm_waterareas</Keyword>
+          <Keyword>pregeneralized)</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>2.534955338809825</westBoundLongitude>
+          <eastBoundLongitude>6.431646604722539</eastBoundLongitude>
+          <southBoundLatitude>49.637803656022186</southBoundLatitude>
+          <northBoundLatitude>51.514290813831465</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="2.534955338809825" miny="49.637803656022186" maxx="6.431646604722539" maxy="51.514290813831465"/>
+        <BoundingBox CRS="EPSG:3857" minx="282189.9375" miny="6383784.5" maxx="715967.625" maxy="6712775.0"/>
+        <Style>
+          <Name>generic</Name>
+          <Title>Generic</Title>
+          <Abstract>Generic style</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Awaterareas"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>osm:waterways</Name>
+        <Title>osm_waterways</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>osm_waterways</Keyword>
+          <Keyword>pregeneralized)</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>2.483367899278104</westBoundLongitude>
+          <eastBoundLongitude>6.457676412974008</eastBoundLongitude>
+          <southBoundLatitude>49.64447312943993</southBoundLatitude>
+          <northBoundLatitude>51.592720659934635</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="2.483367899278104" miny="49.64447312943993" maxx="6.457676412974008" maxy="51.592720659934635"/>
+        <BoundingBox CRS="EPSG:3857" minx="276447.25" miny="6384931.0" maxx="718865.25" maxy="6726816.5"/>
+        <Style>
+          <Name>line</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style that just prints out a green line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://maps6.geosolutionsgroup.com/geoserver/ows?service=WMS&amp;version=1.3.0&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=osm%3Awaterways"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMS_Capabilities>

@@ -1,0 +1,32 @@
+{
+  "took": 1,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 1,
+    "max_score": 5.3768635,
+    "hits": [
+      {
+        "_index": "309d65f2-9d0c-42b3-a56f-f48cd9473e6c_configuration_geo_data",
+        "_type": "geo_data",
+        "_id": "d4914374-784b-4750-9a17-ca054197e11f",
+        "_score": 5.3768635,
+        "_source": {
+          "id": "d4914374-784b-4750-9a17-ca054197e11f",
+          "fieldName": "places__title",
+          "layerId": "764197",
+          "layerTitle": "opendata_parkhaeuser",
+          "geoDataValue": "Parkhaus Audi Dome",
+          "resourceId": 764199,
+          "topValue": 5333536.976132349,
+          "rightValue": 687716.6843805218
+        }
+      }
+    ]
+  }
+}
