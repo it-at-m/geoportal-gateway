@@ -37,7 +37,7 @@
 
         <!-- common libs -->
 
-        <lombok.version>1.18.34</lombok.version>
+        <lombok.version>1.18.36</lombok.version>
 
         <lombok-mapstruct.version>0.2.0</lombok-mapstruct.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>
