@@ -28,7 +28,7 @@
 
         <spring-boot.version>${project.parent.version}</spring-boot.version>
         <spring-framework.version>6.1.14</spring-framework.version>
-        <spring-cloud-bom.version>2023.0.3</spring-cloud-bom.version>
+        <spring-cloud-bom.version>2023.0.5</spring-cloud-bom.version>
         <spring-data-bom.version>2024.0.2</spring-data-bom.version>
         <spring-session-bom.version>3.3.1</spring-session-bom.version>
         <springdoc-openapi.version>2.6.0</springdoc-openapi.version>
