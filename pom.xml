@@ -59,7 +59,7 @@
         <hamcrest.version>2.2</hamcrest.version>
         <equalsverifier.version>3.16</equalsverifier.version>
         <to-string-verifier.version>1.4.8</to-string-verifier.version>
-        <greenmail.version>2.0.1</greenmail.version>
+        <greenmail.version>2.1.3</greenmail.version>
         <keycloakmock.version>0.16.0</keycloakmock.version>
         <hamcrest-optional.version>2.0.0</hamcrest-optional.version>
         <pitest-junit5.version>1.2.1</pitest-junit5.version>
