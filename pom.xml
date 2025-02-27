@@ -51,7 +51,7 @@
         <guava.version>33.2.1-jre</guava.version>
         <commons-compress.version>1.27.0</commons-compress.version>
 
-        <netty-resolver-dns-native-macos.version>4.1.109.Final</netty-resolver-dns-native-macos.version>
+        <netty-resolver-dns-native-macos.version>4.1.119.Final</netty-resolver-dns-native-macos.version>
 
         <!-- test framework versions -->
 
