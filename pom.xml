@@ -49,7 +49,7 @@
         <apache-commons-lang3.version>3.16.0</apache-commons-lang3.version>
         <apache-httpclient.version>4.5.14</apache-httpclient.version>
         <guava.version>33.2.1-jre</guava.version>
-        <commons-compress.version>1.27.0</commons-compress.version>
+        <commons-compress.version>1.27.1</commons-compress.version>
 
         <netty-resolver-dns-native-macos.version>4.1.109.Final</netty-resolver-dns-native-macos.version>
 
