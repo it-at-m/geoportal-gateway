@@ -42,7 +42,7 @@
         <lombok-mapstruct.version>0.2.0</lombok-mapstruct.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>
 
-        <jakarta-mail.version>2.0.1</jakarta-mail.version>
+        <jakarta-mail.version>2.0.2</jakarta-mail.version>
         <jakarta-activation.version>2.0.1</jakarta-activation.version>
 
         <commons-io.version>2.16.1</commons-io.version>
