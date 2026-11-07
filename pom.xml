@@ -62,7 +62,7 @@
         <greenmail.version>2.0.1</greenmail.version>
         <keycloakmock.version>0.16.0</keycloakmock.version>
         <hamcrest-optional.version>2.0.0</hamcrest-optional.version>
-        <pitest-junit5.version>1.2.1</pitest-junit5.version>
+        <pitest-junit5.version>1.2.3</pitest-junit5.version>
 
         <!-- plugin versions -->
 
